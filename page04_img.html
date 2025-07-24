@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>page04_img.html</title>
+  </head>
+  <body>
+    <h1>이미지 태그 - img (inline요소)</h1>
+    <!-- 상대 경로: 실행 중인 html 파일이 존재하는 경로를 기준으로 파일을 찾는 방식-->
+    <img src="images/balloon.jpg" width="300" height="205" alt="열기구 이미지" />
+
+    <!-- . : 현재 디렉토리
+        .. : 현재 디렉토리의 한 단계 위 (상위 디렉토리) 
+        ../../ : 2단계 상위 디렉토리에서 파일을 찾음
+    -->
+    <img src="./images/moon.jpg" width="300" alt="" />
+
+    <hr color="red" />
+
+    <!-- 절대 경로: 서버의 루트 디렉토리에서 시작하여 파일의 경로를 전체적으로 지정하는 방식 -->
+    <img src="/images/winter.jpg" width="300" alt="겨울 이미지" />
+
+    <img src="http://127.0.0.1:5500/images/helicopter.jpg" width="300" alt="헬기 이미지" />
+    <img
+      src="https://ssl.pstatic.net/melona/libs/1539/1539216/95b2f752520623e1e8c3_20250722161010300.jpg"
+      width="300"
+      alt="배너 이미지"
+    />
+    <br />
+    <figure>
+      <img src="/images/cityscape.jpg" width="40%" alt="도시 경치 이미지" />
+      <figcaption>도시 경관 이미지입니다.</figcaption>
+    </figure>
+  </body>
+</html>
