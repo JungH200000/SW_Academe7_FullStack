@@ -9,14 +9,100 @@
     <h1>table 태그</h1>
     <!-- 3행 2열 테이블 -->
     <table border="1" width="400" height="30">
+      <caption>
+        월별 저축액
+      </caption>
       <tr>
         <th>Month</th>
         <th>savings</th>
       </tr>
       <tr>
-        <td>January</td>
+        <td>Jan</td>
         <td>100,000원</td>
       </tr>
+      <tr>
+        <td>Feb</td>
+        <td>200,000원</td>
+      </tr>
     </table>
+    <hr color="red" />
+    <!-- 3행 4열 테이블
+     width: 80, height: 200
+     1행(테이블 제목): <thead> 태그로 감싸서 작성
+     열 구성: 번호 이름 연락처 주소
+     2행 ~ 3행 : <tbody> 태그로 감싸서 작성 -->
+    <table
+      border="1"
+      width="80%"
+      height="200"
+      align="center"
+      bgcolor="#FFFFFF"
+      bordercolor="#000000"
+      cellspacing="0"
+      cellpadding="5"
+      background="/images/mountains.jpg"
+    >
+      <caption>
+        친구 연락처
+      </caption>
+      <thead>
+        <tr bgcolor="navy" style="color: #ffffff">
+          <th>번호</th>
+          <th>이름</th>
+          <th>연락처</th>
+          <th>주소</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td bgcolor="orange">1</td>
+          <td bgcolor="lightblue">가나다</td>
+          <td background="/images/google.png">010-1234-5678</td>
+          <td>주소 가나다</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>마바사</td>
+          <td>010-9876-5432</td>
+          <td>주소 마바사</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>아자차</td>
+          <td>010-10917-15432</td>
+          <td>주소 아자차</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr color="green" />
+    <h2>col, colgroup 태그 활용</h2>
+    <table width="400px" border="1">
+      <!-- thead, tbody보다 먼저 colgroup을 기술 -->
+      <colgroup>
+        <col span="1" width="20%" style="background-color: lavender" />
+        <!-- <col span="1" style="background-color: rgb(197, 216, 24)" /> -->
+        <col span="2" style="background-color: skyblue" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>나이</th>
+          <th>도시</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>김철수</td>
+          <td>22</td>
+          <td>경상북도 구미시</td>
+        </tr>
+        <tr>
+          <td>박영희</td>
+          <td>25</td>
+          <td>경상북도 경산시</td>
+        </tr>
+      </tbody>
+    </table>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
   </body>
 </html>

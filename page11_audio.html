@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page11_audio.html</title>
+  </head>
+  <body>
+    <h1>멀티미디어</h1>
+    <h2>오디오 재생 -audio 태그</h2>
+    <audio src="/assets/I_Have_A_Dream.mp3" controls loop></audio>
+    <br />
+    <audio controls loop="2" autoplay muted preload="metadata">
+      <source src="/assets/Ob-La-Di Ob-La-Da.ogg" type="audio/ogg" />
+      <source src="/assets/Ob-La-Di Ob-La-Da.ogg" type="audio/mpeg" />
+      <source src="/assets/Ob-La-Di Ob-La-Da.ogg" type="audio/wav" />
+    </audio>
+
+    <hr color="red" />
+
+    <h2>object, embed 태그</h2>
+    <p>
+      웹에서 PDF는 &lt;object&gt;&lt;embed&gt;&lt;iframe&gt; 태그를 이용 <br />
+      미디어는 &lt;video&gt;&lt;audio&gt;태그를 이용
+    </p>
+    <object width="600" height="400" data="/assets/1_3. 웹 퍼블리싱 (BootStrap).pdf"></object>
+  </body>
+</html>

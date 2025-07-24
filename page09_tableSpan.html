@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page09_tableSpan.html</title>
+  </head>
+  <body>
+    <h1>열 병합(colspan), 행 병합(rowspan)</h1>
+    <h2>Left, Top에서 span을 지정</h2>
+    <!-- 3행 4열 -->
+    <table border="1" width="400">
+      <tr>
+        <td colspan="3">1</td>
+        <!-- <td>2</td>
+        <td>3</td> -->
+        <td rowspan="3">4</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td rowspan="2">6</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <!-- <td>10</td> -->
+        <td>11</td>
+        <!-- <td>12</td> -->
+      </tr>
+    </table>
+
+    <hr color="red" />
+    <table border="1" width="500" height="300">
+      <tr>
+        <td rowspan="2" style="background-color: beige">1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="background-color: brown">7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td colspan="3" style="background-color: blue">13</td>
+      </tr>
+      <tr>
+        <td colspan="5" style="background-color: skyblue">16</td>
+      </tr>
+    </table>
+  </body>
+</html>
