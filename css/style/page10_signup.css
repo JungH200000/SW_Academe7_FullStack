@@ -14,8 +14,6 @@ h1#register {
 }
 
 table {
-  width: 90vh;
-  height: 70vh;
   margin: 0 auto;
   /* 테투리를 한 줄로 합칠 때 사용 border-collapse: collapse; */
 }
