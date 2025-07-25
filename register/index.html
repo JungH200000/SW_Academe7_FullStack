@@ -32,7 +32,7 @@
     </style>
   </head>
   <body>
-    <form>
+    <form name="frm1" id="frm1" action="register.jsp" method="get">
       <table border="1" bordercolor="#FFFFFF">
         <colgroup>
           <col width="20%" />
@@ -45,9 +45,11 @@
         </tbody>
         <tbody>
           <tr>
-            <td class="align-right" rowspan="2">*아이디</td>
+            <td class="align-right" rowspan="2">
+              <label for="id">*아이디</label>
+            </td>
             <td>
-              <input type="text" />
+              <input name="userId" id="id" type="text" />
               <input type="button" value="중복검사" />
             </td>
           </tr>
@@ -78,9 +80,11 @@
         </tbody>
         <tbody>
           <tr>
-            <td class="align-right">*이름(한글)</td>
+            <td class="align-right">
+              <label for="name"> *이름(한글) </label>
+            </td>
             <td>
-              <input type="text" />
+              <input name="userName" id="name" type="text" />
               <span class="font-blue">(예: 박정현)</span>
             </td>
           </tr>
@@ -94,25 +98,30 @@
           <tr>
             <td class="align-right" rowspan="2">*주소</td>
             <td>
-              <input type="text" />
-              <input type="button" value="우편번호 찾기" />
+              <input type="tel" />
+              <input type="button" name="postcode" value="우편번호 찾기" />
             </td>
           </tr>
           <tr>
-            <td><input type="text" size="70" /></td>
+            <td><input type="text" name="address" size="70" /></td>
           </tr>
           <tr>
-            <td class="align-right">*전화번호</td>
+            <td class="align-right">
+              <label for="phoneNum">*전화번호 </label>
+            </td>
             <td>
               <span class="font-blue">핸드폰</span>
-              <input type="text" />
-              <input type="radio" name="telecom" value="SKT" /> SKT <input type="radio" name="telecom" value="KT" /> KT
-              <input type="radio" name="telecom" value="LGU+" /> LGU+
+              <input type="tel" name="phoneNumber" id="phoneNum" />
+              <label for="skt"> <input type="radio" name="telecom" id="skt" value="SKT" /> SKT </label>
+              <label for="kt"><input type="radio" name="telecom" id="kt" value="KT" /> KT</label>
+              <label for="lgu+"><input type="radio" name="telecom" id="lgu+" value="LGU+" /> LGU+</label>
             </td>
           </tr>
           <tr>
-            <td class="align-right">이메일</td>
-            <td><input type="text" /></td>
+            <td class="align-right">
+              <label for="email">이메일</label>
+            </td>
+            <td><input type="email" name="email" id="email" /></td>
           </tr>
           <tr>
             <td class="align-right">가입인사</td>
@@ -120,6 +129,10 @@
           </tr>
         </tbody>
       </table>
+      <div style="margin: 0 auto; text-align: center">
+        <button>회원가입</button>
+        <button type="reset">다시 입력</button>
+      </div>
     </form>
   </body>
 </html>

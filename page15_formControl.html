@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><page15_fromControl.html</title>
+  </head>
+  <body>
+    <h1>HTML5에 추가된 입력 양식</h1>
+    <form action="join.jsp" method="get">
+      <fieldset>
+        <legend>:::회원가입:::</legend>
+        <div style="padding-top: 5px; padding-bottom: 10px">
+          <label for="email">이메일</label>
+          <input type="email" name="email" id="email" placeholder="이메일 양식에 맞게 입력하세요" />
+          <!-- multiple placeholder속성을 추가하면 콤마(,)를 이용해서 여러 이메일 입력 가능 -->
+        </div>
+
+        <div style="padding-bottom: 10px">
+          홈페이지:
+          <input type="url" name="homepage" id="homepage" placeholder="URL 형식" />
+        </div>
+
+        <div style="padding-bottom: 10px">
+          <!-- tel type은 연락처 형태가 아니어도 에러 출력을 하지 않지만
+           모바일 기기에서 입력 시 숫자 패드를 나타나게 할 수 있다. -->
+          연락처:
+          <input type="tel" name="tel" id="tel" />
+        </div>
+
+        <div style="padding-bottom: 10px">
+          생년월일:
+          <input type="date" name="birth" id="birth" />
+          시분초:
+          <input type="time" name="birthtime" id="birthtime" />
+        </div>
+
+        <div style="padding-bottom: 10px">
+          나이:
+          <input type="number" name="age" id="age" min="1" max="150" />
+        </div>
+
+        <div style="padding-bottom: 10px">
+          검색어:
+          <input type="search" name="keyword" id="keyword" />
+        </div>
+
+        <div style="padding-bottom: 10px">
+          RGB 범위
+          <input type="range" name="rgb" id="rgb" min="0" max="255" value="127" />
+
+          <input type="color" name="color" id="color" value="#0000FF" />
+        </div>
+
+        <div style="padding-bottom: 10px">
+          포장 여부:
+          <input type="text" name="item" id="item" list="pack" />
+          <datalist id="pack">
+            <option value="package">선물 포장</option>
+            <option value="no_package">선물 포장 안함</option>
+          </datalist>
+        </div>
+
+        <div style="padding-bottom: 2px">
+          <button>회원가입</button>
+
+          <!-- 이미지 버튼의 경우 defalut로 submit이다.
+           그냥 이미지 첨부를 원할 경우 img 태그 사용 -->
+          <input type="image" src="/images/google_icon.png" style="width: 50px" />
+          <img src="/images/chrome_icon.png" alt="chrome 이미지" style="width: 50px" />
+          <img
+            src="/images/website_icon.png"
+            alt="chrome 이미지"
+            style="width: 50px"
+            onclick="location.href='/join.jsp'"
+          />
+          <img src="/images/home_icon.png" onclick="alert('bye bye')" />
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>

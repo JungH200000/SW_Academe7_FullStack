@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page17_semantic.html</title>
+    <style type="text/css">
+      div {
+        width: 90%;
+        height: 95vh;
+        border: 3px solid #0000ff;
+        padding: 5px;
+        margin: 0 auto; /* div 박스 중앙 정렬 */
+        text-align: center; /* text 중앙 정렬 */
+      }
+      header {
+        background-color: aliceblue;
+        height: 10vh;
+      }
+      nav {
+        background-color: lightblue;
+        height: 40px;
+      }
+      main {
+        background-color: bisque;
+        width: 70%;
+        float: left;
+        height: 70vh;
+
+        /* 세로 중앙 정렬 */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      aside {
+        background-color: aquamarine;
+        width: 30%;
+        float: right;
+        height: 70vh;
+      }
+      footer {
+        /* float 해제 */
+        clear: both;
+        background-color: #0000ff;
+        height: 10vh;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <header>Header 영역</header>
+      <nav>Navigation Menu</nav>
+      <main>
+        <section>제목1</section>
+        <section>제목2</section>
+        <section>제목3</section>
+        <section>제목4</section>
+      </main>
+      <aside>사이드 메뉴</aside>
+      <footer>Footer 영역</footer>
+    </div>
+  </body>
+</html>

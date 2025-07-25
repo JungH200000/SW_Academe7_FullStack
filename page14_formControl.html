@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>page14_fromControl.html</title>
+  </head>
+  <body>
+    <div style="border: 1px solid black; padding: 20px">
+      <h1>다양한 입력 form</h1>
+      <form name="frm1" id="frm1" action="join.jsp" method="get" enctype="multipart/form-data">
+        <label for="uname">이름</label>
+        <input type="text" name="userName" id="uname" />
+        <br />
+        <div style="padding-top: 10px">
+          <!-- 파일 업로드 시에는 form의 method는 post로 지정해야 하고
+         enctype 속성 값을 multipart/form-data로 주어야 파일 데이터가 함께 전송된다. -->
+          <label for="">사진</label>
+          <input type="file" name="photo" id="photo" />
+        </div>
+        <div style="padding-top: 10px">
+          성별 (단일선택):
+          <label for="gender1">
+            <input type="radio" name="gender" id="gender1" value="M" />
+            남자
+          </label>
+          <label for="gender2">
+            <input type="radio" name="gender" id="gender2" value="F" />
+            여자
+          </label>
+        </div>
+
+        <div style="padding-top: 10px">
+          취미 (다중 선택):
+          <label for="reading"><input type="checkbox" name="hobby" id="reading" value="reading" />독서</label>
+          <label for="music"><input type="checkbox" name="hobby" id="music" value="music" />음악 감상</label>
+          <label for="movie"><input type="checkbox" name="hobby" id="movie" value="movie" />영화 감성</label>
+        </div>
+
+        <!-- select 단일 선택 -->
+        <div style="padding-top: 10px">
+          드롭다운 리스트 (콤보박스):
+          <select name="job" id="job">
+            <option value="">::직업을 선택하세요::</option>
+            <option value="system">시스템 엔지니어</option>
+            <option value="frontend">프론트엔드 개발자</option>
+            <option value="backend">백엔드 개발자</option>
+          </select>
+        </div>
+
+        <!-- select 다중 선택: multiple 속성 추가 -->
+        <div style="padding-top: 10px">
+          사용 가능한 언어:
+          <select name="lang" id="lang" multiple size="2">
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+            <option value="HTML">HTML</option>
+            <option value="C">C</option>
+          </select>
+        </div>
+
+        <!-- 히든 필드:  사용자에게는 보이지 않는
+         다만, 소스 보기를 통해 보임-->
+        <div style="padding-top: 10px">
+          히든 필드
+          <input type="hidden" name="secret" value="TopSecret" />
+        </div>
+
+        <div style="padding-top: 10px">
+          <!-- 전송 버튼 -->
+          <input type="submit" value="회원가입" />
+
+          <!-- 리셋 버튼 -->
+          <input type="reset" value="다시쓰기" />
+
+          <input type="button" value="일반 버튼" onclick="alert('집 가고 싶어!!')" />
+        </div>
+      </form>
+
+      <hr color="red" />
+
+      <form name="frm2" id="frm2" action="login.jsp" method="post">
+        <label for="id">아이디</label>
+        <input type="text" name="userId" id="id" />
+
+        <label for="passwd">비밀번호</label>
+        <input type="password" name="userPwd" id="passwd" />
+
+        <!-- button의 default는 submit이기 때문에
+         변경하고 싶다면 type 속성 사용 -->
+        <button>로그인</button>
+        <button type="reset">다시쓰기</button>
+        <button type="button" onclick="location.href='https://www.naver.com'">일반 버튼-네이버로 이동</button>
+      </form>
+    </div>
+  </body>
+</html>
