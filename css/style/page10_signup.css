@@ -8,12 +8,19 @@
   src: url('fonts/Paperlogy-2ExtraLight.ttf') format('truetype'); /* 폰트 파일 경로 */
 }
 
+h1#register {
+  text-align: center;
+  padding-top: 10px;
+}
+
 table {
-  width: 700px;
+  width: 90vh;
+  height: 70vh;
   margin: 0 auto;
   /* 테투리를 한 줄로 합칠 때 사용 border-collapse: collapse; */
 }
 td {
+  /* td 태그는 기본이 중앙 정렬 */
   font-family: 'Paperlogy4';
   /* 모든 셀에 기본 여백 적용 */
   padding: 2px;
@@ -29,10 +36,14 @@ td {
   background-color: #ffff8b;
   padding-right: 10px; /* 글자와 선 사이 여백 추가 */
   font-weight: bold;
-  vertical-align: middle; /* 세로 중앙 정렬 */
 }
 .font-blue {
   font-family: 'Paperlogy3';
   font-size: 11px;
   color: blue;
 }
+
+/* 테이블 셀(<td>) 내부의 내용물을 정렬하거나 
+<img>나 <span>처럼 한 줄에 나란히 배치되는 요소(인라인 요소)들의 높이를 서로 맞출 때
+vertical-align 속성을 사용 
+예시: 중앙 정렬 vertical-align: middle;*/
