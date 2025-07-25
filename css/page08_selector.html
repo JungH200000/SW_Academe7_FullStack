@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page08_selector.html</title>
+    <style>
+      /* a 태그 링크 스타일 */
+      /* 링크: 방문 전 */
+      a:link {
+        /* 밑줄 제거 */
+        text-decoration: none; /* 방문 후에도 유지됨 */
+        color: red;
+      }
+
+      /* 링크: 방문 후 */
+      a:visited {
+        color: hotpink;
+      }
+
+      /* 링크: 마우스 클릭 시 */
+      a:active {
+        color: purple;
+        font-size: 200%;
+      }
+
+      /* 링크: 마우스 오버 시 */
+      a:hover {
+        background-color: sandybrown;
+        font-size: 1.3em;
+      }
+
+      /* 문제: input 요소 중 비활성화된 요소를 선택해서
+       배경색을 #ddd로, 글자색은 tomato 색으로 설정 */
+      input#name {
+        background-color: #ddd;
+        color: blue;
+      }
+
+      /* 문제: input 요소 중 입력 포커스가 왔을 때, 테두리를 red 실선으로 
+      :focus 사용 */
+      input:focus {
+        outline: none;
+        border: solid blue;
+        border-radius: 5px;
+      }
+
+      /* 문제: button에 마우스 오버 시 배경색과 글자색을 자유롭게 추가하고
+      padding: 10px 추가 */
+      button:hover {
+        background-color: #ff0;
+        color: blue;
+        font-weight: bold; /* 숫자로도 조절 가능 */
+        font-size: 20px;
+        padding: 10px;
+        border: none;
+      }
+
+      /* 문제: class가 google인 요소를 선택해서 배경색 */
+      h1.google {
+        background-color: skyblue;
+        padding: 5px;
+      }
+
+      /* 문제: class가 google이 아닌 요소를 선택해서 배경색을 beige로 설정
+              선택자: not(조건): 조건이 아닌 요소를 선택함 */
+      a:not(.google) {
+        background-color: beige;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="google">상태 선택자 / 가상 클래스 선택자</h1>
+    <p>특정 상태나 가상 액션 상황을 가정한 선택자</p>
+    <hr />
+    <h2>하이퍼링크 스타일</h2>
+    <a href="https://www.naver.com">Naver</a> <br /><br />
+    <a href="https://www.google.com" class="google">Google</a> <br /><br />
+    <a href="https://www.tistory.com/">Tistory</a> <br /><br />
+    <a href="https://www.kiu.ac.kr/pages/index.htm">경일대학교</a> <br /><br />
+
+    <hr color="red" />
+    user: <input type="text" name="name" id="name" value="이름" disabled /><br />
+    password: <input type="password" name="pwd" id="pwd" />
+    <button>로그인</button>
+  </body>
+</html>

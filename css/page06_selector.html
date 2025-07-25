@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page06_selector.html</title>
+    <style>
+      body * {
+        border: 1px solid silver;
+        padding: 10px;
+      }
+      /* 문제1. #d1의 자식 중 p태그를 선택해서 배경색을 coral주세요 
+       자식 선택자 : 선택자 > 선택요소
+       자손 선택자 : 선택자   선택요소
+      */
+      #d1 > p {
+        background-color: coral;
+      }
+      /* 문제2. #d2의 자손 p를 선택해서 border를 3px dashed 색상 */
+      #d2 p {
+        border: 3px dashed purple;
+      }
+
+      /* 문제3. id가 d11인 요소의 자식 p태그의 아래 동생 p를 선택하세요
+       배경색: beige로 주세요
+       형제 선택자: 선택자 + 요소 (바로 아랫 동생)
+                   선택자 ~ 요소 (아랫 동생들)                                    
+      */
+      #d11 > .p + p {
+        background-color: beige;
+      }
+
+      /* 문제4. id가 d22인 요소의 자식 중 class가 p1인 요소의 아랫 동생들을 선택해서 배경색 알아서 주세요 */
+      #d22 > .p1 ~ p {
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>계층 선택자</h1>
+    <div id="d1">
+      #d1
+      <p>감자</p>
+      <div id="d11">
+        #d11
+        <p class="p">감자2</p>
+        <p>고구마1</p>
+        <p>고구마2</p>
+      </div>
+    </div>
+
+    <div id="d2">
+      #d2
+      <p>감자</p>
+      <div id="d22">
+        #d22
+        <p class="p1">감자4</p>
+        <p>고구마2</p>
+        <p>고구마3</p>
+      </div>
+    </div>
+  </body>
+</html>

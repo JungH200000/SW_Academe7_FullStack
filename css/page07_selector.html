@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page07_selector.html</title>
+    <style>
+      div > p:first-child {
+        background-color: antiquewhite;
+      }
+      div > p:last-child {
+        background-color: #ffff00;
+      }
+      div > p:nth-child(2) {
+        background-color: blueviolet;
+      }
+      div > p:nth-child(4) {
+        border: 3px dotted teal;
+      }
+
+      /* 홀수 번째 자식들을 선택 : 
+      border: thick dashed 색상 */
+      div > p:nth-child(2n + 1) {
+        border: thick dashed tomato;
+      }
+
+      /* 짝수 번째 자식들을 선택 :
+      color: white */
+      div > p:nth-child(2n) {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>first-child/last-chile/nth-child() 활용</h1>
+    <div>
+      <p>first-child/last-chile/nth-child() 활용</p>
+      <p>first-child/last-chile/nth-child() 활용</p>
+      <p>first-child/last-chile/nth-child() 활용</p>
+      <p>first-child/last-chile/nth-child() 활용</p>
+      <p>first-child/last-chile/nth-child() 활용</p>
+    </div>
+  </body>
+</html>

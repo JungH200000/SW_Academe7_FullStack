@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page05_selector.html</title>
+    <style>
+      /* 1. 태그 선택자
+      div와 p 태그에 대해: 글자색: 자유, 글자크기: 1.2em
+      */
+      div,
+      p {
+        color: blue;
+        font-size: 1.2em;
+      }
+
+      /* 2. 클래스 선택자: 앞에 마침표(.)를 붙이고 클래스명 기술
+      class가 cls1인 요소를 선택해서
+      글자색: purple, 안쪽 여백: 0.8em, 바깥 여백: 1em, 배경색: 알아서 */
+      .cls1 {
+        color: purple;
+        padding: 0.8em;
+        margin: 1em;
+        background-color: antiquewhite;
+      }
+
+      /* 3. 아이디 선택자: 앞에 #을 붙이고 아이디명 기술
+      id가 dv2인 요소를 선택하여
+      테두리: 5px dotted 색상 자유, 안쪽/바깥쪽 여백 0.5em */
+      #dv2 {
+        border: 5px dotted red;
+        color: red;
+        margin: 0.5em;
+        padding: 0.5em;
+      }
+
+      .cls2 {
+        background-color: lavender;
+      }
+      p {
+        background-color: red;
+        color: blue;
+      }
+      /* 우선 순위:
+      아이디 선택자 > 클래스 선택자 > 계층 선택자 > 태그 선택자*/
+    </style>
+  </head>
+  <body>
+    <h1>기본 선택자 - (태그 선택자/클래스 선택자/아이디 선택자</h1>
+    <div id="dv1">div#dv1</div>
+    <div id="dv2">div#dv2</div>
+    <div class="cls1">div.cls1</div>
+    <p class="cls1">p.cls1</p>
+    <p class="cls2">p.cls2</p>
+  </body>
+</html>
