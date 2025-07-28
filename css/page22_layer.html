@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page22_layer.html</title>
+    <style>
+      body {
+        padding: 2em;
+      }
+      div#wrap div {
+        width: 100px;
+        height: 100px;
+      }
+      div#wrap {
+        position: relative;
+        border: 1px solid red;
+        width: 100%;
+        height: 500px;
+      }
+      div.z-1 {
+        background-color: beige;
+        position: absolute;
+        left: 50px;
+        top: 50px;
+        z-index: 999;
+      }
+      div.z-2 {
+        background-color: rgb(184, 184, 163);
+        position: absolute;
+        left: 80px;
+        top: 80px;
+        z-index: 8;
+      }
+      div.z-3 {
+        background-color: rgb(109, 109, 95);
+        position: absolute;
+        left: 110px;
+        top: 110px;
+        z-index: 7;
+      }
+      div.z-4 {
+        background-color: rgb(131, 131, 46);
+        position: absolute;
+        left: 140px;
+        top: 140px;
+        z-index: 6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Layer 구성하기</h1>
+    <!-- 레이어 구성 시 => 부모 position: relative, 자식 position: absoulte
+     겹치는 순서 조절 방법: z-index 속성 사용 -->
+
+    <div id="wrap">
+      <div class="z-1">레이어: z-1</div>
+      <div class="z-2">레이어: z-2</div>
+      <div class="z-3">레이어: z-3</div>
+      <div class="z-4">레이어: z-4</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page21_position_sticky.html</title>
+    <style>
+      body {
+        background-color: antiquewhite;
+      }
+      header {
+        background-color: cornflowerblue;
+        width: 100%;
+        height: 200px;
+      }
+      div.navi {
+        background-color: purple;
+        color: white;
+        width: 100%;
+        height: 100px;
+        position: sticky;
+        top: 0;
+        left: 0;
+      }
+      .container {
+        margin-top: 160px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>헤더</header>
+    <div class="navi">
+      sticky 네비게이션
+      <br />
+      .navi는 평소엔 흐름에 따라 자연스럽게 배치됩니다. 그러다 스크롤을 내릴 때 .navi의 상단이 뷰포트의 top: 0 위치에
+      닿는 순간, 그 자리에서 멈춰서 고정됩니다. 즉, sticky는 처음부터 고정되는 게 아니라, 스크롤 위치에 따라 고정되기도
+      하고 해제되기도 하는 특수한 동작을 합니다.
+    </div>
+    <div class="container">
+      <img src="https://picsum.photos/1000/500" alt="random_photo" />
+      <img src="https://picsum.photos/1000/500" alt="random_photo" />
+      <img src="https://picsum.photos/1000/500" alt="random_photo" />
+      <img src="https://picsum.photos/1000/500" alt="random_photo" />
+      <img src="https://picsum.photos/1000/500" alt="random_photo" />
+      <img src="https://picsum.photos/1000/500" alt="random_photo" />
+    </div>
+    <pre>
+1. 기본 동작
+  스크롤 범위 내에서는 relative처럼 동작: 요소는 원래의 문서 흐름에 따라 배치됩니다.
+  스크롤 범위를 벗어나면 fixed처럼 동작: 요소가 설정된 특정 임계점에 도달하면 고정된 위치에 머무르게 됩니다.
+2. 조건 및 동작 방식
+  position: sticky를 사용하려면 **상위 컨테이너(스크롤 부모)** 와의 관계를 설정해야 합니다.
+
+  주요 속성:
+    top, right, bottom, left 중 하나 이상을 설정해야 합니다.
+    이 속성들은 스크롤 시 요소가 고정될 위치를 결정합니다.
+    동작 과정:
+    기본 상태 (relative):
+        요소는 상위 컨테이너 안에서 일반적으로 배치됩니다.
+    임계점 도달 (fixed):
+        스크롤이 진행되며 설정한 top, right 등의 값에 도달하면, 해당 위치에 고정됩니다.
+    범위 종료:
+        요소의 상위 컨테이너 경계를 벗어나면 더 이상 고정되지 않고 자연스럽게 스크롤됩니다.
+    </pre>
+  </body>
+</html>
