@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page13_text.html</title>
+    <style>
+      div.box1 {
+        border: 2px solid silver;
+        height: 100px;
+        width: 500px;
+        margin: 1em;
+        /* padding: 0.5em; */
+        font-size: 1.5em;
+        /* 수평 정렬(text-align): left(defalut), right, center, justify */
+        text-align: center;
+
+        /* 수직 정렬(vertical-align): top, bottom, middle
+        div에서는 수직 정렬이 적용되지 않음
+        vertical-align: middle; */
+        /* div에서 수직 정렬하기 위해서는? */
+        line-height: 100px; /* (편법) height의 크기와 맞추기. 단, padding이 있을 경우 부정확 */
+      }
+      div.box2 {
+        border: 2px solid magenta;
+        height: 100px;
+        width: 500px;
+        margin: 1em;
+        padding: 0.5em;
+        font-size: 1.5em;
+        text-align: center;
+
+        /* 수직 정렬 */
+        display: table-cell;
+        vertical-align: middle;
+      }
+      h1.shadow {
+        text-shadow: 4px 2px 7px rgb(115, 240, 13);
+        /*            x   y 번짐정도 색상  */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>텍스트 스타일</h1>
+    <h2>기본 (normal)</h2>
+    <h2 style="text-decoration: overline">윗줄</h2>
+    <h2 style="text-decoration: underline">밑줄</h2>
+    <h2 style="text-decoration: line-through">취소선</h2>
+    <strike>html 취소선</strike> <br />
+    <a href="https:www.google.com" style="text-decoration: none">하이퍼 링크-밑줄 삭제</a>
+    <hr />
+    <h1 class="shadow">안녕 CSS - Text Shadow</h1>
+
+    <div class="box1">텍스트 수평/수직 정렬</div>
+    <div class="box2">텍스트 수평/수직 정렬</div>
+
+    <table border="1" style="width: 60%; height: 400px; margin: 0 auto">
+      <tr>
+        <td width="50%" style="text-align: center">수평 정렬</td>
+        <td width="50%" style="vertical-align: bottom">수직 정렬</td>
+      </tr>
+      <tr>
+        <td width="50%">
+          <div style="text-transform: capitalize">abc(첫글자를 대문자로)</div>
+          <div style="text-transform: uppercase">abcD(모두 대문자로)</div>
+          <div style="text-transform: lowercase">aBcdEF(모두 소문자로)</div>
+        </td>
+
+        <td width="50%">
+          문자 간격 <br />
+          <span style="letter-spacing: 10px">문자간격</span> <br />
+          <span style="word-spacing: 20px">단어 간격</span>
+        </td>
+      </tr>
+    </table>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  </body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page15_list.html</title>
+    <style>
+      ul.ul1 li {
+        border: 1px solid green;
+        list-style-type: square;
+        list-style-position: inside; /* default: outside */
+        padding: 4px;
+      }
+      /* ul.ul2 li {
+        list-style-image: url('./images/chrome_icon.png');
+        list-style-position: inside;
+      } */
+      ul.ul2 {
+        list-style: none;
+        padding-left: 30px;
+      }
+      ul.ul2 li {
+        position: relative;
+        padding-left: 30px; /* 이미지 공간 확보 */
+      }
+      ul.ul2 li::before {
+        content: '';
+        background-image: url(./images/chrome_icon.png);
+        position: absolute;
+        left: 0; /* x 좌표 */
+        top: 5px; /* y 좌표 */
+        width: 25px;
+        height: 25px;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      ol li {
+        border: 1px solid mediumblue;
+        /* upeer-alpha, lower-alpha : 알파벳 대,소문자
+           upper-roman, lower-roman */
+        list-style-type: upper-roman;
+        list-style-position: inside;
+        padding: 4px;
+      }
+
+      /* class가 menu > li 에 대해 아래와 같이 설정
+        - 폭: 120px 높이: 25px
+        - 배경색: 알아서
+        - 바깥 여백: 3px
+        - 안쪽 여백: 10px
+        - 목록 말머리 : none
+        - 서체
+        - 글자크기 0.9em
+        - 글자정렬: 중앙에 오도록, 수직: 미들
+      */
+      ul.menu > li {
+        background-color: aqua;
+        padding: 10px;
+        margin: 3px;
+        width: 120px;
+        height: 25px;
+        list-style-type: none;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.9em;
+        text-align: center;
+        float: left;
+        /* float: left, right 
+        float 속성을 해제할 때는
+        clear: left / clear: right / clear: both*/
+      }
+      ul.menu > li > a {
+        color: white;
+      }
+      div.clear {
+        clear: both; /* left, right 모두 해제 */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>목록 관련 스타일</h1>
+    <ul class="ul1">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Bootstrap</li>
+      <li>JavaScript</li>
+    </ul>
+
+    <hr />
+
+    <ul class="ul2">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Bootstrap</li>
+      <li>JavaScript</li>
+    </ul>
+
+    <hr />
+
+    <ol>
+      <li>Oracle</li>
+      <li>MySQL</li>
+      <li>MongoDB</li>
+    </ol>
+
+    <hr />
+
+    <ul class="menu">
+      <li><a href="https://jquery.com/">jQuery</a></li>
+      <li><a href="https://ko.react.dev/">React.js</a></li>
+      <li><a href="https://nodejs.org/ko">Node.js</a></li>
+      <li><a href="https://spring.io/">Spring</a></li>
+
+      <div class="clear"></div>
+      <hr color="red" size="5" />
+    </ul>
+  </body>
+</html>

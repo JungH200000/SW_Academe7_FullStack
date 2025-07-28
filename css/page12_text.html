@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page12_text.html</title>
+    <style>
+      /* 레이아웃 수치는 가급적 "%, em, ex"를 사용하자. */
+      @font-face {
+        font-family: 'Paperlogy4'; /* 내가 지어준 폰트 이름 */
+        src: url('/css/style/fonts/Paperlogy-4Regular.ttf') format('truetype'); /* 폰트 파일 경로 */
+      }
+      body {
+        font-family: 'Paperlogy4';
+        font-size: larger; /* large, x-large, xx-large, x-small, xx-small */
+        font-weight: bolder; /* 100 ~ 900 (default: 400) */
+        color: darkgreen;
+      }
+
+      p,
+      span {
+        padding: 20px;
+        border: 1px solid silver;
+        background-color: azure;
+      }
+
+      p.em_font {
+        font-size: 2em;
+      }
+      p.em_font span {
+        font-size: 2em; /* 4배가 된다. */
+      }
+
+      p.rem_font {
+        background-color: antiquewhite;
+        color: navy;
+        font-size: 2rem;
+      }
+      p.rem_font span {
+        font-size: 2rem;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>글자 또는 텍스트 스타일 - 단위</h1>
+    <p>기본 (normal)</p>
+    <p class="em_font">
+      글자 크기 ABC (em 단위)
+      <span>글자 크기 123 (em 단위)</span>
+    </p>
+
+    <p class="rem_font">
+      글자 크기 ABC (rem 단위)
+      <span>글자 크기 123 (rem 단위)</span>
+    </p>
+  </body>
+</html>

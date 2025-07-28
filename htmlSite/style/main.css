@@ -1,0 +1,53 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'Paperlogy3'; /* 내가 지어준 폰트 이름 */
+  src: url('./fonts/Paperlogy-3Light.ttf') format('truetype'); /* 폰트 파일 경로 */
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(255, 255, 245);
+  font-family: 'Paperlogy3';
+  color: black;
+}
+
+div.container {
+  text-align: center;
+  margin: 0 auto;
+}
+
+h1#title {
+  padding-top: 30px;
+  padding-bottom: 10px;
+  color: #6f4e37;
+}
+
+a[href] {
+  color: #6f4e37;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+p#infor {
+  /* line-height: 문장 사이의 간격 조절 */
+  line-height: 1.6;
+}
+
+/* Home(index.html) */
+img[alt='coffee_image.jpg'] {
+  padding: 15px;
+  width: 50%;
+  border-radius: 20px;
+}
+
+/* Tasty Story(story.html) */
+h1#story_title {
+  color: #6f4e37;
+}
+
+/* 고객센터 */
+.input-field {
+  /* 클래스를 이용한 너비 설정 */
+  width: 100%;
+  box-sizing: border-box;
+}

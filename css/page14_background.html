@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page14_background.html</title>
+    <style>
+      body {
+        /* rgba()
+        0~255 사이의 수치값 또는 %
+        alpha 값: 투명도 0 ~ 1 사이의 실수값
+                  1에 가까울수록 불투명 / 0에 가까울수록 투명 */
+        color: rgba(0%, 0%, 100%, 0.5);
+      }
+      span.sky {
+        background-color: skyblue;
+      }
+      span.pink {
+        background-color: pink;
+      }
+      h2.sky {
+        background-color: skyblue;
+      }
+      /* table의 자식 tr의 자식 td 중 클래스가 rp인 요소를 선택해서 배경색을 줘라. */
+      /* 페이지에서 개발자 도구를 보면 table 태그 아래에 자동으로 tbody 태그가 추가됨으로
+         table > tr은 적용되지 않는다. */
+      table tr > td.rp {
+        background-color: beige;
+        background-repeat: repeat; /* defalut */
+      }
+
+      /* 배경 이미지 background-image: url('이미지 파일 경로') */
+      td {
+        background-image: url('./images/home_icon.png');
+        background-repeat: no-repeat;
+      }
+
+      td#x {
+        background-repeat: repeat-x;
+      }
+      td#y {
+        background-repeat: repeat-y;
+      }
+
+      td#x2 {
+        background-position: right bottom;
+      }
+      td#y2 {
+        background-position: 50% 50%;
+      }
+      td#z2 {
+        background-position: 50px 50px;
+      }
+
+      /* class가 txt인 요소에 대해 
+      글자 크기: 1.2 rem
+      배경 이미지: 알아서 반복하지 않도록
+      이미지: 중앙에 위치 */
+      textarea.txt {
+        background-image: url('./images/website_icon.png');
+        font-size: 1.2rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        /* scroll (default): 배경 이미지 스크롤 되지 않음 
+           local: 배경 이미지 스크롤 됨 
+           fixed: 고정됨(min-height 같은 거 추가해보기)*/
+        background-attachment: local;
+      }
+
+      #wrap {
+        width: 200px;
+        height: 200px;
+        /* 배경 이미지 꽉차게 */
+        background-image: url('./images/clouds.jpg');
+        background-repeat: no-repeat;
+        /* contain: 이미지 내용이 다 나오도록 확대, 축소
+           cover: 배경의 빈 공간이 없도록 이미지 비율에 맞게 확대
+           auto
+           크기 지정: 2개 값 (width, height)
+                     1개 값 (width)-높이는 원본 이미지 비율에 맞게 자동 설정 */
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>배경 관련 스타일</h1>
+    <span class="sky">배경색 적용하기1</span>
+    <span class="pink">배경색 적용하기2</span>
+
+    <h2 class="sky">배경에 이미지 적용하기</h2>
+
+    <table border="1" height="400px" width="100%">
+      <tr>
+        <td width="25%" class="rp">repeat</td>
+        <td width="25%" id="x">repeat-x</td>
+        <td width="25%" id="y">repeat-y</td>
+        <td width="25%" id="z">no-repeat</td>
+      </tr>
+      <tr>
+        <td width="25%" class="a">기본 위치는 left, top</td>
+        <td width="25%" id="x2">right-bottom</td>
+        <td width="25%" id="y2">50% 50%</td>
+        <td width="25%" id="z2">50px 50px</td>
+      </tr>
+    </table>
+    <hr color="red" />
+    <textarea class="txt" rows="10" cols="50">안녕하세요?</textarea>
+    <br /><br />
+    <div id="wrap" style="border: 1px solid silver"></div>
+    <br /><br /><br /><br /><br /><br /><br /><br />
+  </body>
+</html>
