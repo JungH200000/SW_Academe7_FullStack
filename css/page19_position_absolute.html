@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page19_position_absolute.html</title>
+    <style>
+      body {
+        border: 1px solid blue;
+        height: 90vh;
+      }
+      div#abs {
+        background-color: indianred;
+        width: 100px;
+        height: 100px;
+        /* 부모를 기준으로 x, y 좌표를 설정.
+        다만, 부모의 position이 relative일 경우 부모를 기준으로 삼지만, 
+        부모의 position이 relative가 아니라면 body를 기준으로 삼는다. */
+        position: absolute;
+        left: 150px;
+        top: 100px;
+      }
+      div#parent {
+        background-color: beige;
+        position: relative;
+        left: 250px;
+        top: 250px;
+        width: 200px;
+        height: 200px;
+      }
+      div#child {
+        background-color: violet;
+        width: 100px;
+        height: 100px;
+        /* 부모를 기준으로 x, y 좌표를 설정 */
+        position: absolute;
+        left: 80px;
+        top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id="abs">absoulte</div>
+    </div>
+
+    <div id="parent">
+      <div id="child">child</div>
+    </div>
+  </body>
+</html>

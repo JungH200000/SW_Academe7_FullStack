@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page18_position_releative.html</title>
+    <style>
+      div,
+      span {
+        background-color: rgb(222, 120, 155);
+        border: 1px solid blue;
+      }
+      span.top {
+        position: relative;
+        left: 20px;
+        top: -15px;
+      }
+      span.right {
+        background-color: antiquewhite;
+        /* 원래 static인 위치에서 오른쪽에서 왼쪽으로 설정한 만큼 이동 */
+        position: relative;
+        right: -30px;
+      }
+      span.bottom {
+        background-color: aqua;
+        /* 원래 static인 위치에서 아래에서 위로 설정한 만큼 이동 */
+        position: relative;
+        bottom: 50px;
+      }
+      div.left {
+        background-color: blueviolet;
+        /* 원래 static인 위치에서 왼쪽에서 오른쪽으로 설정한 만큼 이동 */
+        position: relative;
+        left: 5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>position - static, [relative], absolute, fixed</h1>
+    <!-- relative: 원래 static인 위치를 기준으로 해서 지정된 좌표만큼 이동  -->
+    <span class="top">span1</span>
+    <span class="right">span2</span>
+    <span class="bottom">span3</span>
+    <div class="left">div1</div>
+  </body>
+</html>
