@@ -1,20 +1,17 @@
 @charset "UTF-8";
-@font-face {
-  font-family: 'Paperlogy4'; /* 내가 지어준 폰트 이름 */
-  src: url('fonts/Paperlogy-4Regular.ttf') format('truetype'); /* 폰트 파일 경로 */
-}
 
 body {
   background-color: rgb(248, 248, 248);
 }
 h1#menu-gallery {
   text-align: center;
+  padding-top: 10px;
 }
 div.gallery {
-  padding: 1em;
+  padding: 0 1em;
   margin: 1em;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
 }
 div.gallery-item {
   background-color: white;
