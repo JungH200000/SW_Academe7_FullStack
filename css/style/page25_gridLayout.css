@@ -12,12 +12,12 @@ div.gallery {
   margin: 1em;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
+  gap: 20px;
 }
 div.gallery-item {
   background-color: white;
   border: 1px solid white;
   border-radius: 10px;
-  margin: 0.5em;
   padding: 1em;
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
   text-align: center;
