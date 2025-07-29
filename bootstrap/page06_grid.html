@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page06_grid.html</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <!-- ------------------------------------------ -->
+    <style>
+      .col,
+      .col-xs-1,
+      .col-sm-1,
+      .col-md-1,
+      .col-lg-1,
+      .col-xs-2,
+      .col-sm-2,
+      .col-md-2,
+      .col-lg-2,
+      .col-xs-3,
+      .col-sm-3,
+      .col-md-3,
+      .col-lg-3,
+      .col-xs-4,
+      .col-sm-4,
+      .col-md-4,
+      .col-lg-4,
+      .col-xs-5,
+      .col-sm-5,
+      .col-md-5,
+      .col-lg-5,
+      .col-xs-6,
+      .col-sm-6,
+      .col-md-6,
+      .col-lg-6,
+      .col-xs-7,
+      .col-sm-7,
+      .col-md-7,
+      .col-lg-7,
+      .col-xs-8,
+      .col-sm-8,
+      .col-md-8,
+      .col-lg-8,
+      .col-xs-9,
+      .col-sm-9,
+      .col-md-9,
+      .col-lg-9,
+      .col-xs-10,
+      .col-sm-10,
+      .col-md-10,
+      .col-lg-10,
+      .col-xs-11,
+      .col-sm-11,
+      .col-md-11,
+      .col-lg-11,
+      .col-xs-12,
+      .col-sm-12,
+      .col-md-12,
+      .col-lg-12,
+      .col-12 {
+        border: 1px solid red;
+        padding: 10px;
+      }
+      .row {
+        margin-bottom: 4px;
+        margin-top: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-4">
+      <h1>Bootstrap Grid Layout</h1>
+      <!-- 1행 -->
+      <div class="row">
+        <div class="col">1열</div>
+        <div class="col">2열</div>
+        <div class="col">3열</div>
+        <div class="col">4열</div>
+        <div class="col">5열</div>
+        <div class="col">6열</div>
+        <div class="col">7열</div>
+        <div class="col">8열</div>
+        <div class="col">9열</div>
+        <div class="col">10열</div>
+        <div class="col">11열</div>
+        <div class="col">12열</div>
+      </div>
+
+      <!-- 2행 -->
+      <div class="row">
+        <div class="col-12 col-sm-8 col-md-6">col1</div>
+        <div class="col-12 col-sm-2 col-md-3">col2</div>
+        <div class="col-12 col-sm-2 col-md-3">col3</div>
+      </div>
+
+      <!-- 3행 -->
+      <div class="row">
+        <!-- md일 때 8의 폭을 갖는 column 1개 생성 -->
+        <div class="col-md-8 offset-md-2 bg-secondary">3-col-1</div>
+      </div>
+    </div>
+  </body>
+</html>
