@@ -1,0 +1,12 @@
+#main {
+  margin: 0 auto;
+  border: thick solid black;
+  height: 50vh;
+  padding: 3em;
+}
+@media screen and (min-width: 320px) {
+  #main {
+    width: 50%;
+    background-color: #67961b44;
+  }
+}

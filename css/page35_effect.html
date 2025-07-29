@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page35_effect.html</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        margin: 1em;
+        background-color: rgb(72, 206, 206);
+      }
+      div#box1 {
+        background-color: blue;
+        color: white;
+      }
+      div#box1:active {
+        display: none;
+        /* 해당 영역이 사라짐 */
+        /* 다시 등장시키고 싶을 때는 block */
+      }
+
+      div#box2 {
+        background-color: #eb4034;
+      }
+      div#box2:active {
+        visibility: hidden;
+        /* 영역은 그대로 있고, 감춰저 있다. */
+        /* 다시 등장시키고 싶을 때는 visible */
+      }
+
+      div#box3:hover {
+        opacity: 0;
+        /* 0(투명) ~ 1(불투명) */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>요소를 화면에서 보이지 않게 만들기</h1>
+    <div id="box1">display: none</div>
+    <div id="box2">visibility : hidden</div>
+    <div id="box3">opacity : 0</div>
+    <hr />
+  </body>
+</html>

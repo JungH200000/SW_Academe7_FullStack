@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page36_mediaquery.html</title>
+    <style>
+      div#main {
+        background-color: #f0948d;
+        height: 50vh;
+        border: thick solid #000;
+        box-sizing: border-box;
+      }
+      /* 반응형은 mobile first */
+      /* mobile(320px 이상)일 때 media query */
+      @media screen and (min-width: 320px) {
+        div#main {
+          background-color: powderblue;
+          width: 50%;
+        }
+      }
+      /* tablet */
+      @media screen and (min-width: 760px) {
+        div#main {
+          background-color: #8c6a0d;
+          width: 70%;
+        }
+      }
+      /* pc */
+      @media screen and (min-width: 1024px) {
+        div#main {
+          background-color: #6b9ff2;
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main"><h1>div#main</h1></div>
+    <br />
+    <h3>미디어 쿼리</h3>
+    <p>@media [only|not] 미디어 유형 [and 조건]*</p>
+  </body>
+</html>

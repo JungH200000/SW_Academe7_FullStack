@@ -8,19 +8,69 @@
       body {
         padding: 3em;
       }
+      @keyframes colorChange {
+        0% {
+          background-color: #32a852;
+          transform: scale(1);
+        }
+        50% {
+          background-color: #eb4034;
+          transform: scale(1.5);
+        }
+        100% {
+          background-color: #4287f5;
+          transform: scale(1);
+        }
+      }
       div.box {
         width: 100px;
         height: 100px;
-        background-color: #fcba03;
+        border-radius: 10px;
+        font-weight: bold;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        /* Animation 설정 */
+        /* keyframe_name duration function delay 반복횟수(infinite-무한정)*/
+        animation: colorChange 3s ease-in-out 3;
+      }
+
+      div.box1 {
+        width: 100px;
+        height: 100px;
+        background-color: #387ff2;
         border-radius: 10px;
 
         display: flex;
         align-items: center;
         justify-content: center;
+
+        margin-top: 5em;
+        margin-bottom: 1em;
+      }
+      .animate {
+        animation: colorChange 3s linear 3;
       }
     </style>
   </head>
   <body>
     <div class="box">Animation</div>
+
+    <div id="dv1" class="box1">Animation2</div>
+
+    <button onclick="startAnimation()">동작 버튼</button>
+
+    <script type="text/javascript">
+      // JavaScript 영역
+      function startAnimation() {
+        // alert('hi');
+        let div1 = document.getElementById('dv1');
+        // alert(div1);
+        // div1에 .animate 클래스를 추가하자.
+        div1.classList.add('animate');
+      }
+    </script>
   </body>
 </html>
