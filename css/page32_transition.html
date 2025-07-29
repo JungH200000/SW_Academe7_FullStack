@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page31_transition.html</title>
+    <style>
+      div.bar {
+        width: 300px;
+        background-color: rgb(156, 131, 98);
+        color: rgb(255, 255, 255);
+        margin: 5px;
+        padding: 2px;
+        /* hover 시 폭을 1000px까지 늘리고, 각 함수 적용해 보기 */
+        /* 전환 속성: width, 지속시간 3초 */
+        transition-property: width;
+        transition-duration: 3s;
+      }
+      div.bar:hover {
+        width: 1000px;
+      }
+      div.bar:nth-child(1) {
+        transition-timing-function: linear;
+      }
+      div.bar:nth-child(2) {
+        transition-timing-function: ease;
+      }
+      div.bar:nth-child(3) {
+        transition-timing-function: ease-in;
+      }
+      div.bar:nth-child(4) {
+        transition-timing-function: ease-out;
+      }
+      div.bar:nth-child(5) {
+        transition-timing-function: ease-in-out;
+      }
+      div.box {
+        background-color: #e30887;
+        width: 250px;
+        height: 150px;
+        color: white;
+        text-align: center;
+        line-height: 150px;
+        border-radius: 5px;
+
+        /* [1] .box에 hover하면 배경색, 원, 글자색 전환 */
+        transition-property: background-color, border-radius, color;
+        transition-duration: 1s, 2s, 1s;
+        transition-timing-function: ease-in;
+      }
+      input#name {
+        border: 1px solid #ccc;
+        padding: 0.5em;
+        background-color: #fff;
+
+        /* [2] input에 입력 포커스(focus)가 올 때 border 색 변경 */
+        transition: border-color 1s ease-out, background-color 1s ease-in;
+      }
+      button {
+        padding: 0.5em;
+        margin: 1em;
+        border: none;
+
+        /* [3] button을 클릭(active)할 때 border 색 변경 */
+        transition: border 0.1s ease, transform 0.3s linear;
+      }
+
+      div.box:hover {
+        background-color: black;
+        border-radius: 50%;
+        color: white;
+      }
+
+      input#name:focus {
+        outline: none;
+        border-color: blue;
+        background-color: #ccc;
+      }
+
+      button:active {
+        border: 1px solid red;
+        transform: scale(1.3) rotate(360deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="bar">lienar : 일정한 속조로</div>
+      <div class="bar">ease : 느리게 -> 빠르게 -> 느리게</div>
+      <div class="bar">ease-in : 느리게 -> 빠르게</div>
+      <div class="bar">ease-out : 빠르게 -> 느리게</div>
+      <div class="bar">ease-in-out : 느리게 -> 빠르게 -> 느리게</div>
+      <hr />
+      <div class="box">Transition</div>
+      <hr />
+      <input type="text" id="name" placeholder="name" />
+      <hr />
+      <button>Click Me</button>
+    </div>
+  </body>
+</html>

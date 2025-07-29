@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page33_transform.html</title>
+    <style>
+      body {
+        padding: 3em;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        margin: 1em;
+        background-color: darkgoldenrod;
+        color: #fff;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      div.box {
+        transition: transform 0.5s ease;
+      }
+      div.box:hover {
+        transform: rotate(-45deg) scale(1.5);
+      }
+
+      /* [1] .box1 클릭 시 x축 방향으로 100px만큼, y축 방향으로 50px만큼 이동 */
+      div.box1 {
+        background-color: blanchedalmond;
+        color: black;
+        transition: transform 0.5s ease;
+      }
+      div.box1:active {
+        transform: translate(100px, 50px);
+      }
+
+      /* [2] .box2 hover 시 x축 크기 1.5 확대, y축 크기 0.3 축소 */
+      div.box2 {
+        background-color: rgb(134, 105, 70);
+        transition: transform 0.5s ease;
+      }
+      div.box2:hover {
+        transform: scale(1.5, 0.3);
+      }
+
+      div.box4 {
+        background-color: aliceblue;
+        color: black;
+        transition: transform 0.5s linear;
+      }
+      div.box4:hover {
+        transform: skew(30deg, 10deg);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+/*  ######################################################################
+	기본형  {transform : 함수}
+
+    *----- transform 함수---------------------
+    rotate(회전 효과) : rotateX(), rotateY(), rotate(x, y)
+    scale(확대/축소 효과) : scaleX(), scaleY(), scale(x, y)
+    translate(이동효과) : translateX(), translateY(), translate(x, y)
+    skew(비틀기) 효과 : skewX(), skewY()
+    ######################################################################*/
+-->
+    <div class="box">rotate</div>
+    <div class="box1">translate</div>
+    <div class="box2">scale</div>
+    <div class="box3">rotate(-30deg)</div>
+    <div class="box4">skew</div>
+  </body>
+</html>

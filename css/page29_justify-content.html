@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page29_justify-content.html</title>
+    <style>
+      div.container {
+        width: 950px;
+        background-color: #ddd;
+        margin-bottom: 1em;
+        border: 1px solid #000;
+
+        display: flex;
+        flex-direction: row; /* default */
+      }
+      div.box {
+        background-color: blueviolet;
+        padding: 4px 50px;
+        margin: 5px;
+      }
+      div.opt1 {
+        justify-content: center;
+      }
+      div.opt2 {
+        /* 주축의 시작점에 배치 */
+        justify-content: flex-start;
+      }
+      div.opt3 {
+        /* 주축의 끝점에 배치 */
+        justify-content: flex-end;
+      }
+      div.opt4 {
+        /* 균등하게 배치 */
+        justify-content: space-between;
+      }
+      div.opt5 {
+        /* 자신의 양쪽(around)에 동일한 크기의 여백을 가지도록 공간을 나눔 */
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container opt1">
+      <div class="box"><p>1</p></div>
+      <div class="box"><p>2</p></div>
+      <div class="box"><p>3</p></div>
+      <div class="box"><p>4</p></div>
+    </div>
+    <div class="container opt2">
+      <div class="box"><p>1</p></div>
+      <div class="box"><p>2</p></div>
+      <div class="box"><p>3</p></div>
+      <div class="box"><p>4</p></div>
+    </div>
+    <div class="container opt3">
+      <div class="box"><p>1</p></div>
+      <div class="box"><p>2</p></div>
+      <div class="box"><p>3</p></div>
+      <div class="box"><p>4</p></div>
+    </div>
+    <div class="container opt4">
+      <div class="box"><p>1</p></div>
+      <div class="box"><p>2</p></div>
+      <div class="box"><p>3</p></div>
+      <div class="box"><p>4</p></div>
+    </div>
+    <div class="container opt5">
+      <div class="box"><p>1</p></div>
+      <div class="box"><p>2</p></div>
+      <div class="box"><p>3</p></div>
+      <div class="box"><p>4</p></div>
+    </div>
+  </body>
+</html>

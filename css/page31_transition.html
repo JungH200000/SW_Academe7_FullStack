@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page31_transition.html</title>
+    <style>
+      div.box1 {
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+        text-align: center;
+        line-height: 200px;
+        transition: background-color 1s ease;
+      }
+      div.box1:hover {
+        background-color: darkblue;
+        color: white;
+      }
+
+      div.box2 {
+        width: 200px;
+        height: 200px;
+        background-color: lavenderblush;
+        text-align: center;
+        line-height: 200px;
+        margin-top: 20px;
+        transition-property: background-color, color, width;
+        /* 배경색 전환 시간: 1s, 글자색 전환 시간: 0.5s, 너비 전환 시간: 2s */
+        transition-duration: 1s, 0.5s, 2s;
+        /* 전환 시작되기 전 0.5초간 대기 */
+        transition-delay: 0.5s;
+      }
+      div.box2:hover {
+        background-color: hotpink;
+        color: blueviolet;
+        width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Transition</h1>
+    <!--  트랜지션이란?
+		하나의 스타일을 완전히 다른 스타일로 바꾸는 것=>스타일 속성이 바뀌는 것
+      전환 효과: 요소의 전(BEFORE)과 후(AFTER)를 자연스럽게 애니메이션 처리하는 것
+      transition: 변화하는데 걸리는 시간/프로퍼티 변화방법/딜레이
+      transition-duration :변화하는데 걸리는 시간 [초(s)|밀리 초(ms)]
+      transition-property : 프로퍼티 [all|none|프로퍼티명]
+      transition-delay: 딜레이
+      transition-timing-function : 변화 방법 [ease|linear|ease-in|ease-out|ease-in-out|cubic-bizer()]                
+    -->
+    <div class="box1">전환.box1</div>
+
+    <div class="box2">전환2.box2</div>
+  </body>
+</html>

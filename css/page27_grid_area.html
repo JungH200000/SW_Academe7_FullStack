@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page27_grid_area.html</title>
+    <style>
+      /* Grid Laygout - template-areas(템플릿 영역)을 이용한 배치 */
+      div.grid-container {
+        margin: auto;
+        width: 70%;
+        background-color: #eee;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 100px);
+        /* grid-template-areas 주의사항
+        한 줄에 들어갈 템플릿 영역을 ""로 감싼다. */
+        grid-template-areas:
+          'box1 box1 box1'
+          'box2 box3 box3'
+          'box2 . box4';
+      }
+      div.box1 {
+        background-color: aqua;
+        grid-area: box1;
+      }
+      div.box2 {
+        background-color: yellow;
+        grid-area: box2;
+      }
+      div.box3 {
+        background-color: blueviolet;
+        grid-area: box3;
+      }
+      div.box4 {
+        background-color: hotpink;
+        grid-area: box4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="box1">box1</div>
+      <div class="box2">box2</div>
+      <div class="box3">box3</div>
+      <div class="box4">box4</div>
+    </div>
+  </body>
+</html>

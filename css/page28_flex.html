@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page28_flex.html</title>
+    <style>
+      body {
+        padding: 2em;
+      }
+      div.box {
+        width: 100px;
+        height: 50px;
+        background-color: greenyellow;
+        margin: 5px;
+      }
+      div.box p {
+        text-align: center;
+      }
+      /*flex:블록레벨 요소로 배치, inline-flex:인라인레벨요소로 배치*/
+      /* flex-direction: row: 기본값. 주축을 가로로 지정하고 왼쪽에서 오른쪽으로 배치
+							           row-reverse: 역으로 오른쪽에서 왼쪽으로 배치
+							           column: 주축을 세로로 지정하고 위->아래로 배치
+							           column-reverse: 아래->위로 배치
+         flex-wrap: nowrap(기본값): 항목을 한 줄에 표시
+						        wrap: 항목을 여러 줄에 표시
+						        wrap-reverse: 항목을 여러 줄에 표시하되, 시작점과 끝점이 바뀐다
+			*/
+      div#wrap1 {
+        display: flex; /* defalut: row */
+        flex-direction: row-reverse;
+        flex-wrap: wrap; /* defalut: nowrap */
+      }
+      div#wrap2 {
+        display: flex;
+        /* flex-flow: flex-direction ,flex-wrap를 한 번에 나타내는 방법 */
+        flex-flow: column-reverse nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flex Box Layout</h1>
+    <div id="wrap1">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+      <div class="box">
+        <p>4</p>
+      </div>
+      <div class="box">
+        <p>5</p>
+      </div>
+      <div class="box">
+        <p>6</p>
+      </div>
+    </div>
+
+    <hr color="blue" />
+
+    <div id="wrap2">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+      <div class="box">
+        <p>4</p>
+      </div>
+      <div class="box">
+        <p>5</p>
+      </div>
+      <div class="box">
+        <p>6</p>
+      </div>
+    </div>
+  </body>
+</html>
