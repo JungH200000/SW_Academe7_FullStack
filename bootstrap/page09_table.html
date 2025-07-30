@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page09_table.html</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Basic Table + Striped</h1>
+      <p>기본 table style: .table</p>
+      <p>table 색상: table-primary 등</p>
+      <table class="table">
+        <thead>
+          <tr class="table-primary">
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-success">
+            <td>정현</td>
+            <td>박</td>
+            <td>ung@bootstrap</td>
+          </tr>
+          <tr class="table-secondary">
+            <td>천오</td>
+            <td>이</td>
+            <td>hello@bootstrap</td>
+          </tr>
+          <tr class="table-danger">
+            <td>오수</td>
+            <td>담</td>
+            <td>o@bootstrap</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+
+      <h2>Bordered/Hover/Small table</h2>
+      <table class="table table-bordered table-hover table-sm">
+        <thead>
+          <tr class="table-info">
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-warning">
+            <td>정현</td>
+            <td>박</td>
+            <td>ung@bootstrap</td>
+          </tr>
+          <tr class="table-dark">
+            <td>천오</td>
+            <td>이</td>
+            <td>hello@bootstrap</td>
+          </tr>
+          <tr class="table-light">
+            <td class="table-danger">오수</td>
+            <td class="table-primary">담</td>
+            <td class="table-secondary">o@bootstrap</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+
+      <h2>Responsive table</h2>
+      <p>
+        Responsive Table(반응형 테이블)을 만들기 위해서는 table을 감싸는 div가 필요하고 div에 class를
+        .table-responsive를 준다. <br />
+        반응형 테이블은 992px 이상일 때는 차이가 없지만, 그 미만일 때 수평 스크롤 바가 생긴다.
+      </p>
+      <div class="table-responsive">
+        <table class="table table-stripped table-dark table-hover">
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>정현</td>
+              <td>박</td>
+              <td>ung@bootstrap</td>
+              <td>정현</td>
+              <td>박</td>
+              <td>ung@bootstrap</td>
+            </tr>
+            <tr>
+              <td>천오</td>
+              <td>이</td>
+              <td>hello@bootstrap</td>
+              <td>정현</td>
+              <td>박</td>
+              <td>ung@bootstrap</td>
+            </tr>
+            <tr>
+              <td>오수</td>
+              <td>담</td>
+              <td>o@bootstrap</td>
+              <td>정현</td>
+              <td>박</td>
+              <td>ung@bootstrap</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

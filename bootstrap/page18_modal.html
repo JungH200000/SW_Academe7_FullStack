@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page18_modal.html</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container py-5">
+      <!-- Button -->
+      <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">로그인</button>
+
+      <!-- Modal 다이얼로그 시작 -->
+      <div class="modal" id="loginModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">로그인</h4>
+              <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+              <form name="loginFrm" action="login.jsp" method="post">
+                <div class="mb-3">
+                  <label for="userId" class="form-label">아이디</label>
+                  <input type="text" class="form-control" name="userId" id="userId" placeholder="User ID" />
+                </div>
+                <div class="mb-3">
+                  <label for="userPwd" class="from-label">비밀번호</label>
+                  <input type="password" class="form-control" name="userPwd" id="userPwd" placeholder="Password" />
+                </div>
+                <div class="form-check mb-3">
+                  <label for="saveId" class="form-check-label">
+                    <input type="checkbox" name="saveId" class="form-check-input" id="saveId" />
+                    아이디 저장
+                  </label>
+                </div>
+                <div class="d-grid">
+                  <button class="btn btn-success btn-block">로그인</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+              <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal 다이얼로그 끝 -->
+    </div>
+  </body>
+</html>
