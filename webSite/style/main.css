@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/*-----------기본-----------*/
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: rgba(245, 245, 220, 0.26);
+}
+div#wrap {
+  margin: 0 auto;
+
+  width: 80vw;
+  height: 100vh;
+}
+/*---Header---*/
+div#header {
+  height: 15vh;
+  border: 1px solid black;
+}
+
+/* 검색창 */
+div#search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div#search > input {
+  width: 60%;
+  height: 40px;
+  border: 1px solid #2db400;
+  border-radius: 20px;
+}
+
+/* Main */
+div#main {
+  background-color: brown;
+}
+
+/* Footer */
+div#footer {
+  background-color: rgb(78, 78, 78);
+}
