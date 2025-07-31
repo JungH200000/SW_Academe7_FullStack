@@ -1,42 +1,347 @@
 @charset "UTF-8";
-/*-----------기본-----------*/
+/*============기본============*/
+/* 색상 변수 */
+:root {
+  --primary-blue: #0a4d68; /* 메인 파란색 */
+  --accent-teal: #088395; /* 포인트 청록색 */
+  --text-dark: #343a40; /* 기본 텍스트 색상 */
+  --text-light: #f8f9fa; /* 밝은 텍스트 색상 (어두운 배경용) */
+  --bg-light: #f8f9fa; /* 밝은 배경색 */
+  --border-color: #e9ecef; /* 테두리 색상 */
+  --badge-red: #d9534f; /* NEW 배지 색상 */
+  --footer-bg: #212529; /* 푸터 배경색 */
+}
 * {
   box-sizing: border-box;
 }
 body {
-  background-color: rgba(245, 245, 220, 0.26);
+  margin: 0;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  /* 한 세트 */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* min-height: 요소의 최소 높이를 의미, 콘텐츠가 많아지면 그에 맞게 높이가 자동으로 늘어남 */
+  /* 100vh: 현재 보이는 브라우저 화면 높이의 100% */
 }
 div#wrap {
+  /* body가 flex 컨테이너이므로, #wrap이 남는 공간을 모두 차지하게 함 */
+  height: 90%;
   margin: 0 auto;
-
   width: 80vw;
-  height: 100vh;
-}
-/*---Header---*/
-div#header {
-  height: 15vh;
-  border: 1px solid black;
+  background-color: white;
 }
 
-/* 검색창 */
-div#search {
+/*-----Header-----*/
+div#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  /* border: 1px solid black; */
+}
+
+/* title */
+h1#title {
+  /* h1 태그의 기본 margin 존재함 */
+  margin: 20px 0 0 0;
+  padding-left: 30px;
+  font-size: 40px;
+}
+h1#title a {
+  text-decoration: none;
+  color: var(--primary-blue);
+}
+h1#title img {
+  width: 40px;
+}
+
+/* 로그인/회원가입 버튼 */
+div#sign {
+  display: flex;
+  gap: 5px;
+  margin: 20px 0 0 0;
+}
+div#sign button {
+  padding: 1em 1em;
+  border-radius: 10px;
+  /* 모든(all) css 속성값이 0.2초의 전환 시간이 있는 애니메이션을 가짐 */
+  transition: all 0.2s ease;
+  font-weight: bold;
+  cursor: pointer; /* 마우스를 가져다대면 마우스가 손가락 모양으로 변경됨 */
+}
+#signIn {
+  background-color: transparent; /* 배경색 투명하게 => 다른 요소 비침 */
+  color: var(--primary-blue);
+  border: 1px solid var(--border-color);
+}
+#signUp {
+  background-color: var(--primary-blue);
+  color: var(--text-light);
+  border: 1px solid var(--border-color);
+}
+#signIn:hover {
+  background-color: var(--bg-light);
+}
+#signUp:hover {
+  background-color: var(--accent-teal);
+  border-color: var(--accent-teal);
+}
+
+/*-----navbar-----*/
+nav#short-cut-area {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+ul#short-cut-list {
+  list-style-type: none;
+  padding: 0 0 0 35px;
+  display: flex;
+
+  gap: 30px;
+}
+ul#short-cut-list a {
+  /* border: 1px solid black; */
+  display: block;
+  padding: 0 10px;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: bold;
+}
+ul#short-cut-list a:hover {
+  color: var(--primary-blue);
+}
+
+/*-----검색창 영역-----*/
+div#search_area {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+/* 검색창 */
 div#search > input {
-  width: 60%;
-  height: 40px;
-  border: 1px solid #2db400;
+  width: 50vw;
+  height: 50px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border-color);
   border-radius: 20px;
 }
+div#search > input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(10, 77, 104, 0.1);
+}
 
-/* Main */
+/*-----Main-----*/
 div#main {
-  background-color: brown;
+  flex-grow: 1;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-auto-rows: min-content; /* 행의 높이를 내부 콘텐츠 크기에 맞게 최소화 */
+
+  gap: 20px;
+}
+
+/* 대표 이미지 영역 */
+div#title-image-area {
+  grid-column: 1 / -1;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+img.title-image {
+  width: 90%;
+  border-radius: 10px;
+}
+
+/* 뉴스 전체 영역 */
+div#main > div.news-area {
+  background-color: white;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+}
+div#main div.list-title-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 뉴스 종류 */
+div#main h2.list-title {
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+
+/* 내용 확장 버튼 */
+button.expand-button {
+  margin-top: 10px;
+  margin-right: 25px;
+  background: none;
+  border: none;
+}
+button.expand-button > a {
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
+  cursor: pointer;
+}
+div#main hr.div-line {
+  width: 90%;
+  margin: auto;
+  border-top: 1px solid var(--border-color);
+}
+
+/* 뉴스 내용 */
+div.content-wrapper {
+  display: flex;
+  gap: 10px;
+  padding: 0 0 0 20px; /* 내부 여백 (상 우 하 좌) */
+}
+
+/* 좌측 메뉴 */
+nav.side-menu {
+  flex-basis: 120px; /* 너비 고정 */
+  flex-shrink: 0; /* 컨테이너가 줄어들어도 메뉴 너비 유지 */
+  border-right: 1px solid var(--border-color); /* 구분선 */
+}
+nav.side-menu ul {
+  list-style-type: none;
+
+  margin: 0; /* 이거 없으면 artice과 높이가 맞지 않음 */
+  padding: 0;
+}
+nav.side-menu a {
+  /* display: block; 링크 영역을 블록으로 만들어 클릭 영역 확장 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px 1px 10px 1px;
+  margin: 5px;
+
+  text-decoration: none;
+  color: var(--text-dark);
+}
+span.badge {
+  background-color: var(--badge-red);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 8px;
+
+  margin-right: 2px;
+  padding: 3px 2px;
+}
+nav.side-menu a:hover {
+  background-color: var(--bg-light);
+}
+nav.side-menu a.active {
+  font-weight: bold;
+  color: var(--primary-blue);
+  background-color: rgba(10, 77, 104, 0.05);
+}
+
+/* 우측 기사 목록 */
+section.article-display {
+  flex-grow: 1; /* 남은 공간 모두 차지 */
+}
+section.article-display div.article {
+  margin-right: 10px;
+}
+section.article-display a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 14px;
+}
+section.article-display a:hover {
+  color: var(--primary-blue);
+  background-color: var(--bg-light);
+}
+
+/* 공지사항 */
+div#main > div.notice-area {
+  background-color: white;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+  margin-bottom: 10px;
+}
+div.notice-area ul#notice-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: first;
+  justify-content: center;
+  padding-right: 40px;
+  /* ul 태그는 기본적으로 위쪽 여백과 왼쪽 여백이 존재한다. */
+  padding-left: 30px;
+  margin-top: 5px;
+}
+div.notice-area li.notice {
+  border-bottom: 1px solid var(--border-color);
+}
+li.notice:last-child {
+  border-bottom: none;
+}
+li.notice a {
+  display: block;
+  text-decoration: none;
+  color: var(--text-dark);
+  padding: 4px;
+}
+
+li.notice a:hover {
+  color: var(--primary-blue);
+  background-color: var(--bg-light);
 }
 
 /* Footer */
 div#footer {
-  background-color: rgb(78, 78, 78);
+  width: 80vw;
+  height: 80px;
+  margin: 0 auto;
+
+  background-color: var(--footer-bg);
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 화면 너비가 768px 이하일 때 적용 */
+@media screen and (max-width: 768px) {
+  div#wrap {
+    width: 95vw;
+  }
+  /*-----Main-----*/
+  div#main {
+    grid-template-columns: 1fr;
+  }
+  h1#title {
+    font-size: 32px;
+  }
+}
+
+/* 화면 너비가 480px 이하일 때 적용 */
+@media (max-width: 480px) {
+  h1#title {
+    font-size: 28px;
+  }
+
+  div#sign button {
+    padding: 0.8em 0.8em;
+  }
+
+  /* 검색창 숨기기 */
+  div#search > input {
+    width: 80vw;
+  }
+  nav.side-menu {
+    /* 좌측 날짜 메뉴 숨기기 */
+    display: none;
+  }
 }

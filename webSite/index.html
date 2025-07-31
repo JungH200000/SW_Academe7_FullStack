@@ -4,23 +4,218 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
     <link rel="stylesheet" href="/webSite/style/main.css" />
   </head>
   <body>
     <div id="wrap">
       <div id="header">
-        <h1><a href="#">Hello World</a></h1>
-        <div id="header-short-cut">
-          <!-- 검색창 -->
-          <div id="search_area">
-            <div id="search">
-              <input type="search" id="search" />
-            </div>
-          </div>
+        <h1 id="title">
+          <a href="#">
+            <img src="/webSite/images/science_logo.png" alt="science-logo.png" />
+            Science News</a
+          >
+        </h1>
+        <div id="sign">
+          <button type="button" id="signIn">Sign In</button>
+          <button type="button" id="signUp">Sign Up</button>
         </div>
       </div>
-      <div id="main">main</div>
-      <div id="footer">footer</div>
+
+      <!-- <nav>: '이건 내비게이션이야'라고 브라우저와 검색엔진에게 명확히 알려주는 이름표가 붙은 상자 -->
+      <nav id="short-cut-area">
+        <ul id="short-cut-list">
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">공지사항</a>
+          </li>
+          <li>
+            <a href="#">IT/과학 뉴스</a>
+          </li>
+          <li>
+            <a href="#">과학 기술 뉴스</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 검색창 -->
+      <div id="search_area">
+        <div id="search">
+          <input type="search" id="search" placeholder="관심있는 과학 뉴스를 검색해 보세요." />
+        </div>
+      </div>
+
+      <!-- 대표 이미지 및 뉴스 기사, 공지사항 -->
+      <div id="main">
+        <!-- 대표 이미지 -->
+        <div id="title-image-area">
+          <img src="/webSite/images/science-title-image.jpg" alt="title-image.jpg" class="title-image" />
+        </div>
+        <!-- 뉴스 기사 -->
+        <div class="news-area">
+          <div class="list-title-area">
+            <h2 class="list-title">IT/과학 뉴스</h2>
+            <button type="button" class="expand-button">
+              <a href="#">+</a>
+            </button>
+          </div>
+          <hr class="div-line" />
+
+          <div class="content-wrapper">
+            <nav class="side-menu">
+              <ul>
+                <li>
+                  <a href="#" class="active">
+                    <span class="badge">New</span>
+                    07월 31일</a
+                  >
+                </li>
+                <li><a href="#">07월 30일</a></li>
+                <li><a href="#">07월 29일</a></li>
+                <li><a href="#">07월 28일</a></li>
+                <li><a href="#">07월 27일</a></li>
+                <li><a href="#">07월 26일</a></li>
+                <li><a href="#">07월 25일</a></li>
+                <li><a href="#">07월 24일</a></li>
+              </ul>
+            </nav>
+
+            <section class="article-display">
+              <div class="article">
+                <a href="#">KT&G 2025 디자인 챌린지와 HS화성 수상 소식</a>
+              </div>
+              <div class="article">
+                <a href="#"> DXVX, 美 바이오텍에 mRNA 항암백신 기술이전</a>
+              </div>
+              <div class="article">
+                <a href="#">신한은행 SDGs 애니메이션 공개</a>
+              </div>
+              <div class="article">
+                <a href="#">iM뱅크, 외화배송서비스 출시</a>
+              </div>
+              <div class="article">
+                <a href="#">금융권 보안사고 시 징벌적 과징금 도입</a>
+              </div>
+              <div class="article">
+                <a href="#">KT&G 2025 디자인 챌린지와 HS화성 수상 소식</a>
+              </div>
+              <div class="article">
+                <a href="#"> DXVX, 美 바이오텍에 mRNA 항암백신 기술이전</a>
+              </div>
+              <div class="article">
+                <a href="#">신한은행 SDGs 애니메이션 공개</a>
+              </div>
+              <div class="article">
+                <a href="#">iM뱅크, 외화배송서비스 출시</a>
+              </div>
+              <div class="article">
+                <a href="#">금융권 보안사고 시 징벌적 과징금 도입</a>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="news-area">
+          <div class="list-title-area">
+            <h2 class="list-title">과학 기술 뉴스</h2>
+            <button type="button" class="expand-button">
+              <a href="#">+</a>
+            </button>
+          </div>
+          <hr class="div-line" />
+
+          <div class="content-wrapper">
+            <nav class="side-menu">
+              <ul>
+                <li>
+                  <a href="#" class="active">
+                    <span class="badge">New</span>
+                    7월 5주차
+                  </a>
+                </li>
+                <li><a href="#">7월 4주차</a></li>
+                <li><a href="#">7월 3주차</a></li>
+                <li><a href="#">7월 2주차</a></li>
+                <li><a href="#">7월 1주차</a></li>
+              </ul>
+            </nav>
+            <section class="article-display">
+              <div class="article">
+                <a href="#">좁은 틈도 문제없다…근육 닮은 초슬림 로봇</a>
+              </div>
+              <div class="article">
+                <a href="#">열껍질로 만든 소재, 고성능 에너지 저장장치 만든다</a>
+              </div>
+              <div class="article">
+                <a href="#">이노스페이스, '한빛' 발사체에 진동저감기술 적용</a>
+              </div>
+              <div class="article">
+                <a href="#">신약개발 토대 '유전체 데이터', 백인 편향 해결책 제시</a>
+              </div>
+              <div class="article">
+                <a href="#">수십 년 된 통념 뒤집다: 유전자 조절에 숨겨진 ‘조직 구조’ 발견</a>
+              </div>
+              <div class="article">
+                <a href="#">단 한 분자만 바꿨다 — 백신의 미래를 바꾼 혁신</a>
+              </div>
+              <div class="article">
+                <a href="#">대장균에게 맡기면 페트병이 타이레놀로?</a>
+              </div>
+              <div class="article">
+                <a href="#">AI가 장내 세균의 비밀 언어를 해독하다</a>
+              </div>
+              <div class="article">
+                <a href="#">심해 미생물의 당분, 암세포를 내부에서 폭발시킨다</a>
+              </div>
+              <div class="article">
+                <a href="#">천연 물질, 단 28일 만에 놀라운 항노화 효과 입증</a>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- 공지사항 -->
+        <div class="notice-area">
+          <div class="list-title-area">
+            <h2 class="list-title">공지사항</h2>
+            <button type="button" class="expand-button">
+              <a href="#">+</a>
+            </button>
+          </div>
+          <hr class="div-line" />
+          <dic class="content-wrapper">
+            <ul id="notice-list">
+              <li class="notice">
+                <a href="#">
+                  <span class="badge">New</span>
+                  07월 31일 IT/과학 뉴스가 업데이트 되었습니다.
+                </a>
+              </li>
+              <li class="notice">
+                <a href="#">
+                  <span class="badge">New</span>
+                  07월 31일 과학 기술 뉴스가 업데이트 되었습니다.
+                </a>
+              </li>
+              <li class="notice">
+                <a href="#"> 07월 30일 IT/과학 뉴스가 업데이트 되었습니다. </a>
+              </li>
+              <li class="notice">
+                <a href="#"> 07월 29일 IT/과학 뉴스가 업데이트 되었습니다. </a>
+              </li>
+              <li class="notice">
+                <a href="#"> 07월 28일 IT/과학 뉴스가 업데이트 되었습니다. </a>
+              </li>
+              <li class="notice">
+                <a href="#"> 07월 28일 과학 기술 뉴스가 업데이트 되었습니다. </a>
+              </li>
+            </ul>
+          </dic>
+        </div>
+      </div>
     </div>
+    <div id="footer">Copyright © 2025 Science News</div>
   </body>
 </html>
