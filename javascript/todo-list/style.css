@@ -1,0 +1,109 @@
+/* 기본 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Malgun Gothic', sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* 전체 container */
+.container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* input */
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#todo-input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#add-button {
+  padding: 10px 20px;
+  background-color: #e53935;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#add-button:hover {
+  background-color: #c62828;
+}
+
+/* todo-list */
+#todo-list {
+  list-style-type: none;
+  text-align: left;
+}
+
+.todo-item {
+  background-color: #e0e0e0;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-item span {
+  flex-grow: 1;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+/* 완료된 항목 */
+.todo-item.completed span {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.todo-item .delete-button {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.todo-item .delete-button:hover {
+  background-color: #c62828;
+}
+
+.todo-item input[type='checkbox'] {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
