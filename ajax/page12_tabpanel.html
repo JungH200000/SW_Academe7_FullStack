@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>세련된 탭 패널</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+      /*====== 기본 ======*/
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+      }
+      #container {
+        width: 600px;
+        margin: 3em auto;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      /*===== tab =====*/
+      ul.tab {
+        display: flex;
+        list-style-type: none;
+        background-color: #e9ecef;
+      }
+      ul.tab li a {
+        display: block;
+        padding: 12px 20px;
+        text-decoration: none;
+        color: #495057;
+        font-weight: 600;
+        text-align: center;
+        border-right: 1px solid #dee2e6;
+        background-color: #f1f1f1;
+        transition: all 0.3s ease;
+      }
+      ul.tab li:last-child a {
+        border-right: none;
+      }
+
+      /* hover */
+      ul.tab li a:hover {
+        background-color: #fff;
+      }
+
+      /* select */
+      ul.tab li a.selected {
+        background-color: #fff;
+        color: #007bff;
+        border-bottom: 3px solid #007bff;
+      }
+
+      /*====== panel =====*/
+      ul.panel {
+        list-style: none;
+        background-color: #fff;
+        padding: 25px;
+        border: 1px solid #dee2e6;
+        border-top: none;
+      }
+      ul.panel li {
+        padding: 0;
+        line-height: 1.7;
+      }
+    </style>
+    <script>
+      $(function () {
+        $('.panel li').hide();
+        $('.panel li:first').show();
+
+        $('.tab li a').click(function (e) {
+          e.preventDefault();
+
+          $('.tab li a').removeClass('selected');
+
+          $(this).addClass('selected');
+
+          $('.panel li').hide();
+
+          let target = $(this).attr('href');
+          $(target).show();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <ul class="tab">
+        <li><a href="#tab1" class="selected">JavaScript</a></li>
+        <li><a href="#tab2">CSS</a></li>
+        <li><a href="#tab3">HTML</a></li>
+        <li><a href="#tab4">jQuery</a></li>
+        <li><a href="#tab5">XHTML</a></li>
+      </ul>
+      <ul class="panel">
+        <li id="tab1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse congue elit eu mauris sollicitudin
+          dictum. Phasellus nec felis ut arcu placerat tincidunt. Vestibulum luctus mauris ac ante molestie eleifend.
+          Quisque dapibus nulla ac purus volutpat posuere a quis nisl.
+        </li>
+        <li id="tab2">
+          Nam cursus molestie erat, a sodales erat sollicitudin ut. Maecenas nec urna mi, eu congue turpis. Duis vitae
+          volutpat lorem. Ut vulputate tempor elit, vitae iaculis elit sollicitudin at. Ut gravida fermentum tempor.
+          Mauris metus ante, volutpat et porta a, malesuada vel purus.
+        </li>
+        <li id="tab3">
+          Pellentesque in metus leo. Praesent porta, dolor nec mattis ullamcorper, velit purus mollis enim, nec
+          tincidunt magna massa ornare elit. In ipsum enim, pellentesque vitae gravida ultrices, aliquet nec ante.
+          Mauris sed nunc ut ligula dictum convallis vel et nunc.
+        </li>
+        <li id="tab4">
+          Vestibulum a quam scelerisque odio ultricies mollis eget a leo. Morbi dictum, velit lobortis hendrerit
+          tincidunt, lacus nisl rhoncus felis, commodo sollicitudin magna augue non est. Nunc in felis quis purus
+          dignissim blandit vel ut erat. In hac habitasse platea dictumst.
+        </li>
+        <li id="tab5">
+          Vestibulum consequat consequat aliquet. Aenean ut nunc dolor, vel dictum mauris. Proin neque eros, tincidunt
+          at faucibus a, dapibus sit amet tellus. Etiam rutrum pharetra risus porta ullamcorper. Nunc convallis orci at
+          massa suscipit porta.
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
