@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page07_quiz.html</title>
+        <style>
+            body {
+                font-size: 1.1em;
+                padding: 1em;
+            }
+            #menu span {
+                display: inline-block;
+                width: 120px;
+                border: 2px solid darkgreen;
+                margin: 3px;
+                padding: 5px;
+                text-align: center;
+                font-weight: bold;
+            }
+        </style>
+        <!-- jquery cdn--------------- -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- ------------------------- -->
+        <script>
+            $(function () {
+                //[1] 모든 p요소 감추기
+                //[2] 메뉴(span)들을 클릭하면 이벤트 처리
+                //관련된 내용만 보여주기
+                $('p').hide();
+                $('#menu span').click(function () {
+                    $('p').hide();
+                    //alert('a');
+                    //attr('속성명') : 정적인 속성을 알아내고자 할 때 (class, href, src,...)
+                    //prop('속성명') : 동적인 속성을 알아내고자 할 때 (disabled, readonly)
+                    let cls = $(this).attr('class');
+                    //alert(cls);
+                    $('p.' + cls).show(500);
+                });
+            });
+            // $(document).ready(() => {
+            //     // [1] 모든 p 요소 감추기
+            //     $('p').hide();
+            //     // [2] 메뉴(span)들을 클릭하면 이벤트 처리
+            //     // 관련된 내용만 보여주기
+            //     $('#booksbutton').click(function () {
+            //         $('p').hide();
+            //         $('p.books').show(500);
+            //     });
+            //     $('#moviesbutton').click(function () {
+            //         $('p').hide();
+            //         $('p.movies').show(500);
+            //     });
+            //     $('#musicbutton').click(function () {
+            //         $('p').hide();
+            //         $('p.music').show(500);
+            //     });
+            // });
+        </script>
+    </head>
+    <body>
+        <div id="menu">
+            <span class="books" id="booksbutton"> Books </span>
+            <span class="movies" id="moviesbutton"> Movies </span>
+            <span class="music" id="musicbutton"> Music </span><br /><br />
+        </div>
+        <p class="books">
+            Books of different subjects available at reasonable prices. Ranging from web development, programming
+            languages and text books all are available at heavy discount. Shipping is free. Also available in stock the
+            popular Magazines, E-books and Tutoriasl CDs at affordable price
+        </p>
+        <p class="movies">
+            Find new movie reviews & latest hollywood movie news. Includes new movie trailers, latest hollywood
+            releases, movie showtimes, entertainment news, celebrity interviews etc. Also find Hollywood actress, actor,
+            videos biography, filmography, photos, wallpapers, music, jokes live tv channels at your doorsteps
+        </p>
+        <p class="music">
+            Find music videos, internet radio, music downloads and all the latest music news and information. We have a
+            large collection of music and songs classified by type, language and region. All downloads are streamed
+            through RealAudio. You can also watch free music videos, tune in to AOL Radio, and search for your favorite
+            music artists.
+        </p>
+    </body>
+</html>
+<!-- page07_quiz.html -->

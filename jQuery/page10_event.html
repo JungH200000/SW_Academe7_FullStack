@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page10_event.html</title>
+        <style>
+            #outer {
+                width: 300px;
+                height: 300px;
+                border: 1px solid blue;
+                padding: 1em;
+            }
+            #inner {
+                width: 150px;
+                height: 150px;
+                border: 1px solid red;
+                padding: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>jQuery 이벤트</h1>
+        <div id="outer">
+            #outer
+            <div id="inner">#inner</div>
+        </div>
+        <hr />
+        <button id="bt1">Click Me</button>
+        <button id="bt2">클릭 한번만(one)</button>
+        <button id="bt3">이벤트 제거(off)</button>
+        <hr />
+        <button id="bt4">버튼1 (버튼1을 누르면 버튼2를 함께 누른 효과)</button>
+        <button id="bt5">버튼2 (trigger)</button>
+
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script>
+            //#outer mouseover시 배경색/ mouseout 원래색
+            $('#outer')
+                .mouseover(function () {
+                    $('#outer').css('background-color', 'lightblue');
+                    console.log('#out mouseover');
+                })
+                .mouseout(function () {
+                    $('#outer').css('background-color', '');
+                    console.log('#out mouseout');
+                });
+
+            //#inner mouseover시 배경색/ mouseout 원래색
+            $('#inner')
+                .mouseover(function () {
+                    $('#inner').css('background-color', 'blue');
+                    console.log('#inner mouseover');
+                })
+                .mouseout(function () {
+                    $('#inner').css('background-color', '');
+                    console.log('#inner mouseout');
+                });
+            //mouseover/mouseout => 버블링 발생 ==>UI 깜박이는 현상 발생
+            //mouseenter/mouseleave =>버블링x [권장]
+
+            // - 이벤트 등록 : on('이벤트',핸들러함수)
+            // - 이벤트가 한 번만 발생 : one('이벤트',핸들러함수)
+            // - 이벤트 제거 : off('이벤트') 지정된 이벤트 제거
+            //                off() : 모든 이벤트 제거
+            // #bt1 포커스가 들어오면 배경색, 포커스아웃되면 원래색
+            $('#bt1')
+                .click(function () {
+                    alert('Hi');
+                })
+                .focusin(function () {
+                    $(this).css('background', 'hotpink');
+                })
+                .focusout(function () {
+                    $(this).css('background', '');
+                });
+
+            // #bt2 클릭시 한 번만 알람창('hello')띄우기
+            $('#bt2').one('click', () => {
+                alert('Hello');
+            });
+            // #bt3 클랙하면 #bt1에 적용했던 이벤트 중에 하나를 제거하세요
+            $('#bt3').on('click', () => {
+                // $('#bt1').off('click');
+                $('#bt1').off();
+            });
+
+            $('#bt5').click(() => {
+                $('body').css('background', 'lime');
+            });
+            $('#bt4').click(() => {
+                alert('hi');
+                //이벤트를 강제로 발생시키는 함수: trigger()
+                $('#bt5').trigger('click');
+            });
+        </script>
+    </body>
+</html>
+<!-- page10_event.html -->

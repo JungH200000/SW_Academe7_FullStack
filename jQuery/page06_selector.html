@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page06_selector</title>
+
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script>
+            $(() => {
+                //grape를 클릭하면 감춰진 banana가 보여지게
+                //(li중 감춰진 요소를 찾아서 보여지게 처리합시다)
+                $('li:contains("grape")').click(function () {
+                    //$('li:hidden').css('display', '');
+                    $('li:hidden').show(3000).hide(2000);
+                    //show([밀리초]) <==> hide([밀리초])
+                });
+                // 감춰진 ul 요소를 찾아서 3초내로 등장시키고 다시 감춰지게
+                $('ul:hidden').show(3000); //.hide(2000);
+                $('ul:visible').hide(2000);
+            });
+        </script>
+    </head>
+    <body>
+        <h1>jQuery 내용필터, [보임필터]</h1>
+        <div id="panel">
+            <ul class="navi1">
+                <li>apple</li>
+                <li style="display: none">banana</li>
+                <li>grape</li>
+                <li></li>
+            </ul>
+            <hr />
+            <ul class="navi2" style="display: none">
+                <li>tiger</li>
+                <li>lion</li>
+                <li>fox</li>
+                <li></li>
+            </ul>
+        </div>
+    </body>
+</html>
