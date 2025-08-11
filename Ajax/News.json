@@ -1,0 +1,133 @@
+﻿{
+    "status": "ok",
+    "feed": {
+        "url": "https://www.hankyung.com/feed/it",
+        "title": "한국경제 | 뉴스 | IT·과학",
+        "link": "https://www.hankyung.com/all-news-it",
+        "author": "",
+        "description": "한경닷컴 RSS 서비스",
+        "image": ""
+    },
+    "items": [
+        {
+            "title": "로봇산업협회, 더인벤션랩·광운대기술지주와 로봇 스타트업 발굴",
+            "pubDate": "2025-08-07 03:34:07",
+            "link": "https://www.hankyung.com/article/202508077022i",
+            "guid": "97c9ac9fa739cec63e8ea994a40a2265",
+            "author": "강해령",
+            "thumbnail": "",
+            "description": "",
+            "content": "",
+            "enclosure": {},
+            "categories": []
+        },
+        {
+            "title": "건설사도 \"모바일로 일한다\"…유라클, GS건설과 '맞손'",
+            "pubDate": "2025-08-07 02:38:46",
+            "link": "https://www.hankyung.com/article/202508076946g",
+            "guid": "9cf23020f82ec100d77721db512984fe",
+            "author": "김대영",
+            "thumbnail": "",
+            "description": "",
+            "content": "",
+            "enclosure": {},
+            "categories": []
+        },
+        {
+            "title": "혼자 살아도 '가족결합' 혜택…KT, 1인 가구 결합상품 출시",
+            "pubDate": "2025-08-07 02:19:48",
+            "link": "https://www.hankyung.com/article/202508076532g",
+            "guid": "d3aea7f50dd925e8e44caa186de302e6",
+            "author": "박수빈",
+            "thumbnail": "",
+            "description": "",
+            "content": "",
+            "enclosure": {},
+            "categories": []
+        },
+        {
+            "title": "온코닉테라퓨틱스, '자큐보' 물질특허 2040년까지 연장",
+            "pubDate": "2025-08-07 01:56:53",
+            "link": "https://www.hankyung.com/article/202508076778i",
+            "guid": "bfdc35dbc3ae39daa22ce16946ac1b97",
+            "author": "이지현",
+            "thumbnail": "",
+            "description": "",
+            "content": "",
+            "enclosure": {},
+            "categories": []
+        },
+        {
+            "title": "\"가장 쓰기 쉬운 IPTV\"…LG유플러스, 버튼 하나로 기능 '통합'",
+            "pubDate": "2025-08-07 01:31:16",
+            "link": "https://www.hankyung.com/article/202508076286g",
+            "guid": "90ee51fddc25535cbfedd135a780f631",
+            "author": "박수빈",
+            "thumbnail": "",
+            "description": "",
+            "content": "",
+            "enclosure": {},
+            "categories": []
+        },
+        {
+            "title": "\"저게 뭐야?\" 보이그룹 손목 봤더니…Z세대 반응 터진 '신기술'",
+            "pubDate": "2025-08-07 01:30:01",
+            "link": "https://www.hankyung.com/article/202508076339g",
+            "guid": "130e7e9cad49864c76ee9371cd5bb99d",
+            "author": "김대영",
+            "thumbnail": "",
+            "description": "",
+            "content": "",
+            "enclosure": {},
+            "categories": []
+        },
+        {
+            "title": "20조원 스케일AI 넘는다…'투명한 데이터'로 승부수 던진 이 회사 [김인엽의 퓨처 디스패치]",
+            "pubDate": "2025-08-07 01:18:31",
+            "link": "https://www.hankyung.com/article/202508076205i",
+            "guid": "8b91687afc5223adc957accadb392c78",
+            "author": "김인엽",
+            "thumbnail": "",
+            "description": "",
+            "content": "",
+            "enclosure": {},
+            "categories": []
+        },
+        {
+            "title": "\"연봉만 올려주면 옮기죠\"…20대 직장인들 이직 조건은?",
+            "pubDate": "2025-08-07 01:07:53",
+            "link": "https://www.hankyung.com/article/202508076424g",
+            "guid": "2995a079beae71ae34285f3702f93036",
+            "author": "김대영",
+            "thumbnail": "",
+            "description": "",
+            "content": "",
+            "enclosure": {},
+            "categories": []
+        },
+        {
+            "title": "\"노인돌봄은 가족의 몫만이 아닙니다\"…시니어케어 빈틈 메우는 AI",
+            "pubDate": "2025-08-07 01:01:52",
+            "link": "https://www.hankyung.com/article/202508076422i",
+            "guid": "984ba64d79a43f80d91f652715073ac0",
+            "author": "최영총",
+            "thumbnail": "",
+            "description": "",
+            "content": "",
+            "enclosure": {},
+            "categories": []
+        },
+        {
+            "title": "동아제약, 건기식 '셀파렉스' 3종 출시",
+            "pubDate": "2025-08-07 00:36:59",
+            "link": "https://www.hankyung.com/article/202508076389i",
+            "guid": "36727a7bf2be564bd610824adad4786a",
+            "author": "송영찬",
+            "thumbnail": "",
+            "description": "",
+            "content": "",
+            "enclosure": {},
+            "categories": []
+        }
+    ]
+}

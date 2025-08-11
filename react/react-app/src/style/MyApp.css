@@ -1,0 +1,22 @@
+/* MyApp.css */
+.App {
+    text-align: center;
+    padding: 1em;
+    background-color: blanchedalmond;
+}
+.App header {
+    background-color: #1facff;
+    color: navy;
+    padding: 1em;
+    text-align: center;
+}
+/* h1, section */
+.App header h1 {
+    text-shadow: 4px 2px 5px lightgreen;
+}
+.App section {
+    width: 100%;
+    background-color: azure;
+    padding: 1em;
+    font-size: 1.5em;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page01_xhr.html</title>
+    </head>
+    <body>
+        <h1>Ajax - Asynchronous JavaScript and XML</h1>
+        <button>User 정보 가져오기(XMLHttpRequest)</button>
+        <button>User 정보 reqres에서 가져오기</button>
+
+        <hr />
+        <div id="result"></div>
+        <script>
+            const btns = document.querySelectorAll('button');
+            const result = document.querySelector('#result');
+            const xhr = new XMLHttpRequest(); //ajax 요청을 보낼 때 사용하는 객체
+            //[1] open(method,url, true) true(디폴트)=>asynchronous방식이면 true, 동기방식이면 false
+            //    => 요청을 보낼 준비를 한다
+            //[2] send(body) //get방식의 요청이면 body부분에 null값. post방식이면 파라미터 데이터를 전달
+            //[3] onload 속성 or onreadystatechange 속성을 이용해서 응답 데이터를 받는다=>callback함수로 받음
+            btns[0].addEventListener('click', () => {
+                xhr.open('get', 'http://localhost:5500/Ajax/User.json', true);
+                // const url = `https://reqres.in/api/users/1`;
+                // xhr.open('get', url);
+                //헤더정보 설정: setRequestHeader(헤더키값, 헤더밸류값)
+                //x-api-key: reqres-free-v1
+                //xhr.setRequestHeader('x-api-key', 'reqres-free-v1');
+                xhr.send(null); //요청을 보낸다
+                xhr.onload = function () {
+                    //응답이 올때 실행되는 함수
+                    const res = xhr.response;
+                    // alert(res);
+                    //alert(typeof res); //json[x] string 으로 응답이 옴
+                    //[1] string을 json객체로 변환: JSON.parse(문자열)
+                    //[2] json객체를 string으로 변환: JSON.stringify(객체)
+                    const obj = JSON.parse(res);
+                    console.log(typeof obj);
+                    //alert(obj.data.first_name);
+
+                    //받은 응답 데이터의 UI를 구성
+                    renderUI(obj);
+                };
+            }); //-------------------
+
+            btns[1].addEventListener('click', () => {
+                let id = prompt('회원 번호를 입력하세요', 1);
+                if (!id) return;
+                const url = `https://reqres.in/api/users/${id}`;
+                xhr.open('get', url);
+                //x-api-key: reqres-free-v1
+                xhr.setRequestHeader('x-api-key', 'reqres-free-v1'); //헤더 설정 api key, 인증코드
+                xhr.send();
+                xhr.onload = function () {
+                    const res = xhr.responseText;
+                    //alert(res);
+                    console.log(res);
+                    renderUI(JSON.parse(res));
+                };
+            }); //-----------------------
+
+            const renderUI = (obj) => {
+                const {
+                    data: { id, email, first_name, last_name, avatar },
+                } = obj;
+                console.log(id, email);
+                result.innerHTML = `
+                    <h2>User Info</h2>
+                    <img src="${avatar}" alt="${first_name}" width="200px">
+                    <h3>ID: ${id} </h3>
+                    <h3>Name: ${first_name} ${last_name} </h3>
+                    <h3>Email:${email}</h3>
+                `;
+            };
+        </script>
+    </body>
+</html>
+<!-- page01_xhr.html 
+{
+    "data": {
+        "id": 10,
+        "email": "string@naver.com",
+        "first_name": "Alice",
+        "last_name": "Kim",
+        "avatar": "images/icon1.jpg"
+    }
+} 
+-->
