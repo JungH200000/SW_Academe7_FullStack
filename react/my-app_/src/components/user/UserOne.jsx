@@ -24,7 +24,12 @@ export default function UserOne() {
         const url = `https://reqres.in/api/users/${id}`;
         //fetch이용해서 회원정보 받아오기
         try {
-            const res = await fetch(url);
+            const res = await fetch(url, {
+                method: 'get',
+                headers: {
+                    'x-api-key': 'reqres-free-v1',
+                },
+            });
             //alert(res.ok);
             if (res.ok) {
                 const data = await res.json(); //응답 문자열을 json객체로 변환

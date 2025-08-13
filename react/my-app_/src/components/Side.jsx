@@ -16,8 +16,25 @@ export default function Side() {
                 <ListGroup.Item as={Link} to="/hook2">
                     useEffect훅 (Clock)
                 </ListGroup.Item>
-                <ListGroup.Item>useRef훅</ListGroup.Item>
-                <ListGroup.Item>useNavigate훅</ListGroup.Item>
+                <ListGroup.Item as={Link} to="/todo">
+                    useRef훅
+                </ListGroup.Item>
+                <ListGroup.Item as={Link} to="/hook3">
+                    useNavigate훅
+                </ListGroup.Item>
+
+                <ListGroup.Item as={Link} to="/hook4">
+                    useContext훅
+                </ListGroup.Item>
+
+                <ListGroup.Item as={Link} to="/hook5">
+                    useMemo훅
+                </ListGroup.Item>
+
+                <ListGroup.Item as={Link} to="/hook6">
+                    useCallback훅
+                </ListGroup.Item>
+
                 <ListGroup.Item as={Link} to="/menu">
                     부모와 자식간의 데이터 전달
                 </ListGroup.Item>

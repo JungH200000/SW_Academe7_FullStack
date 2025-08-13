@@ -14,6 +14,9 @@ import Boards from './components/Boards';
 import UserOne from './components/user/UserOne';
 import Parent from './components/Parent';
 import TodoApp from './components/todo/TodoApp';
+import UseNavigateHook from './components/UseNavigateHook';
+import UseContextHook from './components/context-api/App3';
+import UserAll from './components/user/UserAll';
 
 function App() {
     return (
@@ -44,8 +47,11 @@ function App() {
                                 <Route path="/users/:id" element={<UserDetail />} />
                                 <Route path="/boards" element={<Boards />} />
                                 <Route path="/rest/:id" element={<UserOne />} />
+                                <Route path="/rest2" element={<UserAll />} />
                                 <Route path="/menu" element={<Parent />} />
                                 <Route path="/todo" element={<TodoApp />} />
+                                <Route path="/hook3" element={<UseNavigateHook />} />
+                                <Route path="/hook4" element={<UseContextHook />} />
                                 <Route path="/*" element={<PageNotFound />} />
                             </Routes>
                         </Col>

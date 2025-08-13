@@ -1,0 +1,28 @@
+/* TodoListItem.css */
+.TodoListItem {
+    display: flex;
+    margin: 1.5em auto;
+    padding: 1.1em;
+    /* justify-content: space-around; */
+    align-items: center;
+    gap: 1.5em;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.3rem;
+}
+.TodoListItem .chkbox {
+    width: 20px;
+}
+.TodoListItem .content {
+    flex: 1;
+}
+.TodoListItem .content.done {
+    text-decoration: line-through;
+    color: darkgray;
+}
+/* isDone이 true  className='content done'
+            false className='content'
+*/
+.TodoListItem .wdate {
+    font-size: 0.9rem;
+    color: darkblue;
+}
