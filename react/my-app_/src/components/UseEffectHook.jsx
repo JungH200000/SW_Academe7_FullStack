@@ -12,7 +12,7 @@ export default function UseEffectHook() {
             //componentWillUnmount()와 비슷
             console.log('Clean Up : unmount될 때 해야할 작업을 여기에 기술');
         };
-    }, []);
+    }, [count]);
     //의존성 배열에 빈 배열을 전달하면 => 처음 렌더링한 후에만 useEffect훅이 실행된다
 
     return (
