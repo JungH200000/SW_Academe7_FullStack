@@ -17,6 +17,8 @@ import TodoApp from './components/todo/TodoApp';
 import UseNavigateHook from './components/UseNavigateHook';
 import UseContextHook from './components/context-api/App3';
 import UserAll from './components/user/UserAll';
+import UseMemoHook from './components/UseMemoHook';
+import Parent1 from './components/usecallback/Parent4';
 
 function App() {
     return (
@@ -52,6 +54,8 @@ function App() {
                                 <Route path="/todo" element={<TodoApp />} />
                                 <Route path="/hook3" element={<UseNavigateHook />} />
                                 <Route path="/hook4" element={<UseContextHook />} />
+                                <Route path="/hook5" element={<UseMemoHook />} />
+                                <Route path="/hook6" element={<Parent1 />} />
                                 <Route path="/*" element={<PageNotFound />} />
                             </Routes>
                         </Col>
