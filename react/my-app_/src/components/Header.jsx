@@ -13,6 +13,9 @@ export default function Header() {
                     <a href="/">Home</a>
                 </li> */}
                 <li>
+                    <Link to="/signup">Signup</Link>
+                </li>
+                <li>
                     <Link to="/comp1">MyComp1</Link>
                 </li>
                 <li>

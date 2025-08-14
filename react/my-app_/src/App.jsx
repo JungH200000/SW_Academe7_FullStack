@@ -19,6 +19,7 @@ import UseContextHook from './components/context-api/App3';
 import UserAll from './components/user/UserAll';
 import UseMemoHook from './components/UseMemoHook';
 import Parent1 from './components/usecallback/Parent4';
+import SignUp from './components/member/SignUp';
 
 function App() {
     return (
@@ -42,6 +43,7 @@ function App() {
                             <Routes>
                                 <Route path="/" element={<Home />} />
                                 {/* Route: 특정 url에 대해 렌더링할 컴포넌트를 정의(매핑) */}
+                                <Route path="/signup" element={<SignUp />} />
                                 <Route path="/comp1" element={<MyComp1 />} />
                                 <Route path="/comp2" element={<MyComp2 />} />
                                 <Route path="/hook1" element={<UseEffectHook />} />
