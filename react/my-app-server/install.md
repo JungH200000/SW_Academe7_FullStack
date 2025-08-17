@@ -1,13 +1,13 @@
-# node.js 서버 설치
+### package.json 파일 생성
 
-in terminal
+```
+npm init
+```
 
-1.  npm init
+### express 패키지 설치
 
-2.  npm install express
+npm install express
 
-# 서버 시작
+### 서버 시작
 
-in terminal
-
-1. node index.js
+node 파일이름.확장자
