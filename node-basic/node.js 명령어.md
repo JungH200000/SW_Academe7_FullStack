@@ -1,5 +1,7 @@
 ### package.json 파일 생성
 
+패키지 정보 설정하고, 이를 바탕으로 package.json 생성
+
 ```
 npm init
 ```
