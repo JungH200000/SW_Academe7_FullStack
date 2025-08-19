@@ -1,8 +1,17 @@
+/* devSource/SQL/members.sql */
 use kbDB;
 show databases;
 show tables;
 
+/* SQL (Structured Query Language)
+DDL (Data Definition Language) : creat, drop, alter, truncate
+DML (Data Manipulation Language): insert, delete, update, selece
+DQL (Data Query Language) : select
+TCL (Transaction Control Language) : commit, rollback
+DCL (Data Control Language) : grant to, revoke from
+*/
 --- members table 생성문
+-- drop table if exists members; -- 테이블 삭제
 create table if not exists members( -- members table이 존재하지 않는다면
 	id	int	primary	key	auto_increment, -- 회원 번호(PK)
     name	varchar(30) not null, -- 회원 이름
@@ -15,4 +24,24 @@ create table if not exists members( -- members table이 존재하지 않는다�
 
 desc members; -- desc: describe의 줄임말
 
--- 새로운 데이터 삽입: insert 문
+/* 새로운 데이터 삽입: insert 문
+insert into table명 (column1, column2, ...)
+values (value1, value2, ...);
+*/
+insert into members (name, email, passwd)
+value ('현사', 'abcd@efgh.zxc', '111');
+
+commit; -- commit을 해야 DB에 반영이 됨, MySQL은 자동 commit 해줌
+
+/* 데이터 조회
+select column1, column2, ... from table이름;
+*/
+select id, name, email, passwd, role, createdAt, refreshtoken from members;
+select * from members; -- 모든 column
+
+-- 김관리, admin@master.com, 123, ADMIN 추가
+insert into members (name, email, passwd, role)
+value ('김관리', 'admin@master.com', '123', 'ADMIN');
+-- 잘 추가되었는지 확인
+select * from members;
+
