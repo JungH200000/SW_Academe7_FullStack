@@ -10,8 +10,8 @@ app.use(express.urlencoded({ extended: true }));
 const conn = mysql.createPool({
   host: 'localhost',
   port: '3306',
-  user: 'master',
-  password: 'tiger',
+  user: 'master', // root
+  password: 'tiger', // 1234
   database: 'kbdb',
 });
 console.log('conn: ', conn);

@@ -28,8 +28,11 @@ desc members; -- desc: describe의 줄임말
 insert into table명 (column1, column2, ...)
 values (value1, value2, ...);
 */
-insert into members (name, email, passwd)
-value ('현사', 'abcd@efgh.zxc', '111');
+insert into members (id, name, email, passwd)
+value (1, '현사', 'abcd@efgh.zxc', '111');
+insert into members (id, name, email, passwd)
+value (6, '감성', 'bfwxx@efgh.zxc', '111');
+select * from members;
 
 commit; -- commit을 해야 DB에 반영이 됨, MySQL은 자동 commit 해줌
 
@@ -44,4 +47,3 @@ insert into members (name, email, passwd, role)
 value ('김관리', 'admin@master.com', '123', 'ADMIN');
 -- 잘 추가되었는지 확인
 select * from members;
-

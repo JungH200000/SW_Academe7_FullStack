@@ -10,8 +10,8 @@ const fileCopy = function (src, dest) {
 
 // fileCopy() 호출해서 copy.txt.로 copy
 console.log('===파일 Copy 시작===');
-// fileCopy('ex02-process.js', 'copy.txt');
-fileCopy('dog3.jpg', 'copy.jpg');
+fileCopy('ex05-require.js', 'ex05-require.txt');
+// fileCopy('dog3.jpg', 'copy.jpg');
 
 const zlib = require('zlib');
 fs.createReadStream('dog3.jpg')

@@ -59,7 +59,7 @@ export default function SignUp() {
     //alert('ajax요청');
     try {
       //post방식으로 요청. 회원데이터를 body포함시켜야함, headers에 'Content-Type'을 'application/json'으로 설정
-      const url = `http://localhost:7777/api/signup`; //백엔드 서버
+      const url = `http://localhost:7777/api/users`; //백엔드 서버
       //cors 문제 발생 리액트 서버: 5173포트. 백엔드:7777
       const response = await axios.post(url, formData, {
         headers: {
