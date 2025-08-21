@@ -14,3 +14,6 @@ create table if not exists posts(
     foreign key (name) references members(email) on delete cascade
 );
 -- 외래키 제약조건 : 부모(members)       자식(posts)  
+
+desc posts;
+select * from posts order by id desc;
