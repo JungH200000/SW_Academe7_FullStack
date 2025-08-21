@@ -1,52 +1,40 @@
-// react/my-app-server/index.js
-import express from 'express';
-import cors from 'cors';
-import mysql from 'mysql2/promise';
+const express = require('express');
+const cors = require('cors');
+//npm i express cors
 
-const app = express();
 const PORT = 7777;
 
-app.use(cors()); // 미들웨어
-app.use(express.json()); // 미들웨어
-app.use(express.urlencoded({ extended: true }));
+const app = express();
 
-// mysql.createPool({})
-const pool = mysql.createPool({
-  host: 'localhost',
-  port: '3306',
-  user: 'master', // root
-  password: 'tiger', // 1234
-  database: 'kbdb',
-  connectionLimit: 10,
-  waitForConnections: true,
+app.use(cors()); //cors 미들웨어 설정
+app.use(express.json()); //json유형의 데이터를 받도록 미들웨어 설정
+
+let users = [{ id: 1, name: '마스터김', email: 'admin@a.b.c', role: 'ADMIN', createdAt: '2025-08-14' }];
+let idCnt = users.length;
+
+//post '/api/signup'
+app.post('/api/signup', (req, res) => {
+    //회원정보는 post방식일 때 request의 body에 포함되어 온다
+    const { name, passwd, email, role } = req.body;
+    console.log(name, passwd, email, role);
+    //유효성 체크
+    if (!name || !passwd || !email || !role) {
+        return res.status(400).json({ result: 'fail', message: '모든 값을 입력해야 해요' });
+    }
+    //이메일 중복체크 로직 =>dB에서 확인
+
+    //회원 정보를 db MEMBER테이블에 INSERT하는 로직
+    const newUser = { id: ++idCnt, name: name, email, role, createdAt: '2025-08-14' };
+    users.push(newUser);
+
+    res.json({ result: 'success', message: `회원가입 처리되었어요. 회원번호는 ${newUser.id}번입니다` });
 });
 
-app.post('/api/users', async (req, res) => {
-  const { name, email, passwd, role } = req.body;
-  const user = req.body;
-  // 응답: result => [success, fail], message(결과메시지)
-  if (!name || !email || !passwd) {
-    return res.status(400).json({
-      result: 'fail',
-      message: '이름, 이메일, 비밀번호는 필수 입력입니다.',
-    });
-  }
-  try {
-    const sql = `insert into members (name, email, passwd, role) values(?, ?, ?, ?)`;
-    const [result] = await pool.query(sql, [name, email, passwd, role]);
-    if (result.affectedRows > 0) {
-      return res.json({
-        result: 'success',
-        message: `회원가입 완료. 등록된 회원번호는 ${result.insertId}번 입니다.`,
-      });
-    }
-    res.json({ result: 'fail', message: '회원가입 실패!! 다시 시도하세요!' });
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ result: 'fail', message: 'error' + error.message });
-  }
+//전체회원 목록
+app.get('/api/users', (req, res) => {
+    res.json(users);
 });
 
 app.listen(PORT, () => {
-  console.log(`http://localhost:${PORT}`);
+    console.log(`서버 시작됨 http://localhost:7777`);
 });
