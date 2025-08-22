@@ -6,6 +6,7 @@ import Side from './components/Side';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import PostApp from './pages/PostApp';
+import PostView from './components/posts/PostView';
 function App() {
     return (
         <>
@@ -24,6 +25,7 @@ function App() {
                             <Routes>
                                 <Route path="/" element={<Home />} />
                                 <Route path="/posts" element={<PostApp />} />
+                                <Route path="/posts/:id" element={<PostView />} />
                             </Routes>
                         </Col>
                     </Row>

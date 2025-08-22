@@ -9,14 +9,14 @@ import { devtools } from 'zustand/middleware';
  */
 
 export const usePostFormStore = create(
-  devtools((set) => ({
-    formData: {
-      name: '',
-      title: '',
-      content: '',
-      file: '',
-    },
-    setFormData: (data) => set((state) => ({ formData: { ...state.formData, ...data } })),
-    resetFormData: () => set({ formData: { name: '', title: '', content: '', file: '' } }), //formData초기화
-  }))
+    devtools((set) => ({
+        formData: {
+            name: 'dooly@a.b.c',
+            title: '',
+            content: '',
+            file: '',
+        },
+        setFormData: (data) => set((state) => ({ formData: { ...state.formData, ...data } })),
+        resetFormData: () => set({ formData: { name: '', title: '', content: '', file: '' } }), //formData초기화
+    }))
 );
