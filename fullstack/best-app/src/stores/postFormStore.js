@@ -14,7 +14,8 @@ export const usePostFormStore = create(
             name: 'dooly@a.b.c',
             title: '',
             content: '',
-            file: '',
+            file: '', //첨부파일명. 글수정시 기존에 첨부한 파일명
+            newFile: null, //글수정시 새로 첨부한 파일명
         },
         setFormData: (data) => set((state) => ({ formData: { ...state.formData, ...data } })),
         resetFormData: () => set({ formData: { name: '', title: '', content: '', file: '' } }), //formData초기화

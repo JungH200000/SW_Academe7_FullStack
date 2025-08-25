@@ -41,7 +41,12 @@ router.post('/', upMulter.single('file'), postController.createPost);
 //모든 포스트 목록 조회
 router.get('/', postController.listPost);
 
+router.get('/:id', postController.getPostById);
+
 //글 번호로 삭제 처리
 router.delete('/:id', postController.deletePost);
+
+//글 수정 처리
+router.put('/:id', upMulter.single('file'), postController.updatePost);
 
 module.exports = router;

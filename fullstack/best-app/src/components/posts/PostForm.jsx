@@ -39,8 +39,9 @@ export default function PostForm() {
                 data.append('file', formData.file);
                 console.log('formData.file: ', formData.file);
             }
-
+            // for (let i = 0; i < 10; i++) {
             const result = await apiCreatePostFileUp(data);
+            // }
             //alert(JSON.stringify(result));
             //전체 글목록 새로고침
             resetFormData();
