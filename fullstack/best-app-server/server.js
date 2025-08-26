@@ -10,6 +10,8 @@ const morgan = require('morgan');
 const indexRouter = require('./src/routes/indexRouter');
 const postRouter = require('./src/routes/postRouter');
 const userRouter = require('./src/routes/userRouter');
+const loginRouter = require('./src/routes/loginRouter');
+const adminRouter = require('./src/routes/adminRouter');
 
 const port = process.env.PORT || 7777;
 console.log('port: ', port);
@@ -26,6 +28,8 @@ app.use(cors()); //react와 통신시 필요함
 app.use('/', indexRouter);
 app.use('/api/posts', postRouter);
 app.use('/api/users', userRouter);
+app.use('/api/auth', loginRouter);
+app.use('/api/admin', adminRouter); //인가 처리 미들웨어 넣을 예정
 
 app.listen(port, () => {
     console.log(`http://localhost:${port}`);

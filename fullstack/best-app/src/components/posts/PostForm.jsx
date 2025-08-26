@@ -3,11 +3,13 @@ import { Form, Button } from 'react-bootstrap';
 import { usePostFormStore } from '../../stores/postFormStore';
 import { usePostStore } from '../../stores/postStore';
 import { apiCreatePost, apiCreatePostFileUp } from '../../api/postApi';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import { useAuthStore } from '../../stores/authStore';
 
 export default function PostForm() {
     const { formData, setFormData, resetFormData } = usePostFormStore();
     const fetchPostList = usePostStore((s) => s.fetchPostList);
+    const authUser = useAuthStore((s) => s.authUser);
 
     const titleRef = useRef();
 
@@ -28,6 +30,11 @@ export default function PostForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            if (!authUser || !formData.name) {
+                alert('로그인해야 이용 가능합니다');
+                return;
+            }
+
             // const result = await apiCreatePost(formData); //파일업로드 하지 않는 경우
             //---------------------
             //파일업로드 하는 경우==> FormData객체에 데이터를 담아서 전송해야 한다
@@ -59,7 +66,13 @@ export default function PostForm() {
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="name">
                     <Form.Label>Name</Form.Label>
-                    <Form.Control type="text" name="name" onChange={handleChange} value={formData.name} required />
+                    <Form.Control
+                        type="text"
+                        name="name"
+                        onChange={handleChange}
+                        value={authUser?.email ?? ''}
+                        placeholder={authUser?.email ?? '로그인해야 이용 가능해요'}
+                    />
                 </Form.Group>
                 <Form.Group controlId="title">
                     <Form.Label>Title</Form.Label>

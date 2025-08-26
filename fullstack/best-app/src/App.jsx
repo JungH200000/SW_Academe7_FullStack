@@ -8,7 +8,39 @@ import Home from './pages/Home';
 import PostApp from './pages/PostApp';
 import PostView from './components/posts/PostView';
 import PostEdit from './components/posts/PostEdit';
+import LoginModal from './components/users/LoginModal';
+import { useEffect, useState } from 'react';
+import { useAuthStore } from './stores/authStore';
+import axiosInstance from './api/axiosInstance';
+
 function App() {
+    const [showLogin, setShowLogin] = useState(false);
+
+    const loginAuthUser = useAuthStore((s) => s.loginAuthUser);
+
+    useEffect(() => {
+        requestAuthUser();
+    }, [loginAuthUser]);
+    const requestAuthUser = async () => {
+        try {
+            const accessToken = sessionStorage.getItem('accessToken');
+            if (accessToken) {
+                const response = await axiosInstance.get(`/auth/user`, {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`,
+                    },
+                });
+                const authUser = await response.data;
+                loginAuthUser(authUser); //인증사용자 정보 전역 state에 설정 후 로딩상태 false
+            }
+        } catch (error) {
+            console.error('accessToken 유효하지 않음: ', error);
+            alert(error);
+            sessionStorage.removeItem('accessToken');
+            localStorage.removeItem('refreshToken');
+        }
+    };
+
     return (
         <>
             <div className="container fluid py-5">
@@ -20,9 +52,12 @@ function App() {
                     </Row>
                     <Row className="main">
                         <Col xs={12} sm={4} md={4} lg={3} className="d-none d-sm-block mt-3">
-                            <Side />
+                            <Side setShowLogin={setShowLogin} />
                         </Col>
                         <Col xs={12} sm={8} md={8} lg={9}>
+                            {/* 로그인 모달 */}
+                            <LoginModal show={showLogin} setShowLogin={setShowLogin} />
+                            {/* 라우트 */}
                             <Routes>
                                 <Route path="/" element={<Home />} />
                                 <Route path="/posts" element={<PostApp />} />

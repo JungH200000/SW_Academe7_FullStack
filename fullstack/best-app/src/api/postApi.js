@@ -27,6 +27,7 @@ export const apiFetchPostList = async (page = 1, size = 3, query = undefined) =>
     console.log('page=====', page);
     //alert(page);
     const response = await axiosInstance.get(`/posts`, { params: { page, size, query } });
+                                    // `/posts?page=${page}&size=${size}&query=${query}`
     return response.data;
 };
 //---post 글 삭제하기 ----------------------------------

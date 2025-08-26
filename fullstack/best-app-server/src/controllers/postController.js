@@ -62,7 +62,7 @@ exports.listPost = async (req, res) => {
         //2. 전체 게시목록 가져오기
         const sql2 = `select id,name,title,content,
         attach as file, date_format(wdate,'%Y-%m-%d') as wdate
-        from posts order by id desc limit ? offset ?`;
+        from posts order by id desc limit ? offset ?`; //limit ?,? ==> [offset, size]
         const [posts] = await pool.query(sql2, [size, offset]);
         console.log('posts: ', posts);
 

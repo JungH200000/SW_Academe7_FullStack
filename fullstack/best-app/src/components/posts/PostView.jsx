@@ -2,11 +2,14 @@
 //useParams, useSearchParams
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { usePostStore } from '../../stores/postStore';
+import { useAuthStore } from '../../stores/authStore';
 import { useEffect } from 'react';
 
 export default function PostView() {
     const { id } = useParams(); //type: string
     const navigate = useNavigate();
+
+    const authUser = useAuthStore((s) => s.authUser);
 
     const deletePost = usePostStore((s) => s.deletePost);
 
@@ -34,8 +37,13 @@ export default function PostView() {
     //     return <></>;
     // }
 
-    const handleDelete = async (pid) => {
-        //alert(pid);
+    const handleDelete = async (pid, e) => {
+        //alert(pid + '/' + e);
+        if (authUser?.email !== post.name) {
+            e.preventDefault();
+            alert('작성자만 삭제 가능합니다');
+            return;
+        }
         const yn = confirm(`${pid}번 글을 정말 삭제할까요?`);
         if (!yn) return;
         //
@@ -47,6 +55,12 @@ export default function PostView() {
             alert('글 삭제 실패');
         }
         // await fetchPostList();
+    };
+    const go = (e) => {
+        if (authUser?.email !== post.name) {
+            e.preventDefault();
+            alert('작성자만 수정 가능합니다');
+        }
     };
 
     if (!post)
@@ -63,11 +77,11 @@ export default function PostView() {
                     <h1 className="my-5 text-center">Post View [No. {id}] </h1>
 
                     <div className="text-end my-2">
-                        <Link to={`/postEdit/${id}`}>
+                        <Link to={`/postEdit/${id}`} onClick={go}>
                             <button className="btn btn-info mx-2">수정</button>
                         </Link>
 
-                        <button className="btn btn-danger" onClick={() => handleDelete(id)}>
+                        <button className="btn btn-danger" onClick={(e) => handleDelete(id, e)}>
                             삭제
                         </button>
                     </div>
