@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+<div style="text-align:center">
+    <h1>Homepage</h1>
+<!-- 타임리프 : 템플릿 엔진을 통해 동적으로 HTML을 만들어 줌-->
+    <hr>
+    <h2 style="color: blue" th:text="${data}"></h2>
+    <h2 style="color:red" th:text="${msg}"></h2>
+</div>
+</body>
+</html>
