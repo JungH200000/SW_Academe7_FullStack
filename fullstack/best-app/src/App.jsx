@@ -12,6 +12,9 @@ import LoginModal from './components/users/LoginModal';
 import { useEffect, useState } from 'react';
 import { useAuthStore } from './stores/authStore';
 import axiosInstance from './api/axiosInstance';
+import SignUp from './components/users/SignUp';
+import UserListAdmin from './components/admin/UserListAdmin';
+import MyPage from './components/users/MyPage';
 
 function App() {
     const [showLogin, setShowLogin] = useState(false);
@@ -63,6 +66,9 @@ function App() {
                                 <Route path="/posts" element={<PostApp />} />
                                 <Route path="/posts/:id" element={<PostView />} />
                                 <Route path="/postEdit/:id" element={<PostEdit />} />
+                                <Route path="/signup" element={<SignUp />} />
+                                <Route path="/admin/users" element={<UserListAdmin />} />
+                                <Route path="/mypage" element={<MyPage />} />
                             </Routes>
                         </Col>
                     </Row>
