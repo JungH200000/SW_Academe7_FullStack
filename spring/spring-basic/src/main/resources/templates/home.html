@@ -7,10 +7,19 @@
 <body>
 <div style="text-align:center">
     <h1>Homepage</h1>
-<!-- 타임리프 : 템플릿 엔진을 통해 동적으로 HTML을 만들어 줌-->
-    <hr>
-    <h2 style="color: blue" th:text="${data}"></h2>
+<!-- 타임리프 : 템플릿엔진을 통해 동적으로 html을 만들어 줌-->
+    <hr/>
+    <h2 style="color:blue" th:text="${data}"></h2>
     <h2 style="color:red" th:text="${msg}"></h2>
+    <hr>
+    <a href="/users/form">회원가입</a>
+    <a href="/users">회원목록</a>
+    <a href="/demo1">타임리프1</a>
+    <a href="/demo2">타임리프2</a>
+
+
+
+
 </div>
 </body>
 </html>
