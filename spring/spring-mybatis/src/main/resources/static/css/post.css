@@ -1,0 +1,22 @@
+.container{
+    max-width:900px;
+    margin: 30px auto;
+    padding: 2em;
+    border-raidus: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1)
+}
+h1, h2{
+    text-align: center;
+    margin-bottom: 1.2em;
+    color: #333;
+}
+.postImage{
+    text-align:center;
+    margin: 20px auto;
+}
+.postImage img{
+    max-width:100%;
+    height: auto;
+    border-raidus: 8px;
+    border: 1px solid #ddd;
+}

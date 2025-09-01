@@ -9,7 +9,18 @@ spring:
     url: jdbc:mysql://localhost:3306/kbdb
     username: master
     password: tiger
+  servlet:
+    multipart:
+      max-file-size: 100MB # 파일 업로드 최대 용량 설정
+      max-request-size: 1000MB # 요청 보낼때 파일 업로드 총 용량
 # mybatis mapper
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
   config-location: classpath:config/mybatis-config.xml
+#logging
+logging:
+  level:
+    root: info
+    com.my.spring_mybatis: debug
+file:
+  upload_dir: D:/devSource/Spring/uploads #upload dir

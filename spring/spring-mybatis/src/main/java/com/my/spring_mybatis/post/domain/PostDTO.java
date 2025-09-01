@@ -16,5 +16,6 @@ public class PostDTO {
     private String content;
     private String name;
     private String attach;
+    private String old_attach; //[글 수정시]예전 첨부파일명
     private LocalDateTime wdate;//작성일
 }

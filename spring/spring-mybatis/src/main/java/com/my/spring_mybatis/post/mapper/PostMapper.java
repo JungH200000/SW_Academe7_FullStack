@@ -1,5 +1,6 @@
 package com.my.spring_mybatis.post.mapper;
 
+import com.my.spring_mybatis.post.domain.PageDTO;
 import com.my.spring_mybatis.post.domain.PostDTO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -15,4 +16,14 @@ public interface PostMapper {
     int testMyBatis();
 
     List<PostDTO> listPost();
+
+    int insertPost(PostDTO dto);
+
+    PostDTO findPostById(int id);
+
+    int updatePost(PostDTO dto);
+
+    int getTotalCount(PageDTO pageDTO);
+
+    List<PostDTO> listPostPaging(PageDTO pageDTO);
 }

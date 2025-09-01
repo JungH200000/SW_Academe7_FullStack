@@ -9,7 +9,65 @@
         select count(id) from posts
     </select>
 
-    <select id="listPost" resultType="com.my.spring_mybatis.post.domain.PostDTO">
-        select id,name,title,content,attach, date_format(wdate,'%Y-%m-%d') wdate from posts order by id desc
+<!--    com.my.spring_mybatis.post.domain.PostDTO ==> mybatis-config.xml에  별칭(PostDTO) 등록함-->
+    <select id="listPost" resultType="PostDTO">
+        select id,name,title,content,attach,
+        date_format(wdate,'%Y-%m-%d') wdate
+        from posts order by id desc
     </select>
+
+<!--    총 게시글 수 또는 검색한 게시글 수 가져오기-->
+    <select id="getTotalCount" resultType="_int"
+            parameterType="com.my.spring_mybatis.post.domain.PageDTO">
+        select count(id) from posts
+    </select>
+<!-- 게시글 목록 또는 검색한 게시글 목록 가져오기-->
+    <select id="listPostPaging" parameterType="com.my.spring_mybatis.post.domain.PageDTO">
+        select id,name,title,content,attach,
+        date_format(wdate,'%Y-%m-%d') wdate
+        from posts
+        order by id desc
+        limit #{size} offset  #{offset}
+    </select>
+
+<!--    글쓰기 처리-->
+    <insert id="insertPost" parameterType="PostDTO">
+        insert into posts(name,title,content, attach)
+        values(#{name},#{title},#{content:VARCHAR},#{attach:VARCHAR})
+        <!-- #{name} ==> PostDTO객체의  dto.getName() 를 호출해서
+            그 결과문자열을 넣어줌. 'dooly@a.b.c'
+            NULL값을 허용한 컬럼에는 jdbcType을 기술해줘야 한다
+            -->
+    </insert>
+
+    <!--    글번호로 글 내용 가져오기-->
+    <select id="findPostById" resultType="PostDTO" parameterType="_int">
+        select id,name,title,content,wdate, attach
+        from posts
+        <where>id=#{id}</where>
+    </select>
+<!--    글 수정 처리
+    update posts set title='aa', content='bb', name='cc',
+        attach='cc.jpg'
+        where id=1
+-->
+    <update id="updatePost" parameterType="PostDTO">
+        update posts
+        <set>
+            title=#{title},
+            content=#{content:VARCHAR},
+            name=#{name}
+            <if test="attach !=null and attach !=''">
+                , attach=#{attach}
+            </if>
+        </set>
+        <where>
+            id=#{id}
+        </where>
+    </update>
+
 </mapper>
+
+
+
+

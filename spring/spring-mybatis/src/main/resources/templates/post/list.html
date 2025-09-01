@@ -14,10 +14,15 @@
 <body>
 <div class="container py-4">
     <h1 class="text-center my-3">Post List</h1>
+    <div class="text-center my-3">
+        [<a href="/posts/form">글쓰기</a>]
+        [<a href="/">Home</a>]
+    </div>
+
     <div class="postWrap">
-        <table class="table table-bordered table-hover">
+        <table class="table table-bordered">
             <thead>
-                <tr>
+                <tr class="table-dark">
                     <th>글번호</th>
                     <th>글제목</th>
                     <th>작성자</th>
@@ -30,7 +35,10 @@
                 </tr>
                 <tr th:each="post:${postList}">
                     <td th:text="${post.id}"></td>
-                    <td th:text="${post.title}"></td>
+                    <td th:inline="text">
+                        <a th:href="@{'/posts/'+${post.id}}">[[${post.title}]]</a> &nbsp;&nbsp;&nbsp;
+                        <span th:if="${post.attach != null}"><img th:src="@{/images/attach.png}" width="16px"></span>
+                    </td>
                     <td th:text="${post.name}"></td>
                     <td th:text="${#temporals.format(post.wdate,'yyyy-MM-dd')}"></td>
                 </tr>
