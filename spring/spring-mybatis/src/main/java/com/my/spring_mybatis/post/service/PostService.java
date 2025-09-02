@@ -45,4 +45,8 @@ public class PostService {
     public List<PostDTO> listPostPaging(PageDTO pageDTO) {
         return postMapper.listPostPaging(pageDTO);
     }
+
+    public int deletePost(int id) {
+        return 0;
+    }
 }

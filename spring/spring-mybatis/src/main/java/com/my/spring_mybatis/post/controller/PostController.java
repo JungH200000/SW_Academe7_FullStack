@@ -117,17 +117,32 @@ public class PostController {
     @GetMapping("")
     public String postListPage(@ModelAttribute PageDTO pageDTO, Model model){
         log.info("pageDTO==={}",pageDTO);//page번호
-        //1. 총 게시물 수 구하기
+        //1. 총 게시물 수 구하기 or 검색한 게시글 수 구하기
         int totalCount = postService.getTotalCount(pageDTO);
         pageDTO.setTotalCount(totalCount);//총 게시글 수 설정
         pageDTO.setSize(5);//목록 글 개수 설정
         pageDTO.setPagingBlock(5);//페이징 블럭값 설정
+        ///////////////
         pageDTO.init();//페이징 관련 연산 수행
         //init() 시점에 계산순서 잘 유지해야 함
         
         List<PostDTO> postList = postService.listPostPaging(pageDTO);//offset값 전달
         model.addAttribute("postList", postList);
-        return "post/list";
+        model.addAttribute("page", pageDTO.getPage());
+        model.addAttribute("totalPages",pageDTO.getTotalPages());
+        model.addAttribute("size", pageDTO.getSize());
+        model.addAttribute("totalCount", totalCount);
+
+        model.addAttribute("startPage", pageDTO.getStartPage());
+        model.addAttribute("endPage", pageDTO.getEndPage());
+        model.addAttribute("findType", pageDTO.getFindType());
+        model.addAttribute("findKeyword", pageDTO.getFindKeyword());
+
+        model.addAttribute("pageDTO", pageDTO);
+
+//        return "post/list"; //페이징 처리 안할 경우
+//        return "post/listPage";//페이징 처리할 경우 (페이징 블럭 없이)
+        return "post/listPageBlock";//페이징 처리할 경우 (페이징 블럭 포함)
     }
 
     //글 내용 보기 ----------------

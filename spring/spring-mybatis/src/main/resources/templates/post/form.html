@@ -10,6 +10,7 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/common.css}">
     <style>
         .form, .form-group{
             display:flex;
@@ -20,7 +21,22 @@
     </style>
 </head>
 <body>
-<div class="container py-4">
+<div class="container-fluid py-4">
+    <nav class="custom-navbar">
+        <ul>
+            <li><a href="/">Logo</a></li>
+            <th:block th:if="${session.loginUser==null}">
+                <li><a href="/users/form">SignUp</a></li>
+                <li><a href="/login">Login</a></li>
+            </th:block>
+            <th:block th:if="${session.loginUser!=null}">
+                <li class="active"><a href="#" th:text="|${session.loginUser.name} 님 로그인 중...|">a님 로그인 중...</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </th:block>
+            <li><a href="/posts">Posts</a></li>
+        </ul>
+    </nav>
+
     <h1 class="text-center my-3">Post From</h1>
 
     <!--파일업로드시 주의사항

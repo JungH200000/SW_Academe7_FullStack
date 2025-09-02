@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Post List</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+</head>
+<body>
+<div class="container-fluid py-4">
+    <nav class="custom-navbar">
+        <ul>
+            <li><a href="/">Logo</a></li>
+            <th:block th:if="${session.loginUser==null}">
+                <li><a href="/users/form">SignUp</a></li>
+                <li><a href="/login">Login</a></li>
+            </th:block>
+            <th:block th:if="${session.loginUser!=null}">
+                <li class="active"><a href="#" th:text="|${session.loginUser.name} 님 로그인 중...|">a님 로그인 중...</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </th:block>
+            <li><a href="/posts">Posts</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="text-center my-3">Post List</h1>
+    <div class="text-center my-3">
+        [<a href="/posts/form">글쓰기</a>]
+        [<a href="/posts">글목록</a>]
+    </div>
+<!--        검색폼 ------------------------------>
+    <form name="findFrm" th:action="@{/posts}" method="get" class="row my-3"
+          style="max-width:900px;margin:auto">
+        <div class="col-2 offset-2">
+            <select name="findType" class="form-select">
+                <option value="0">검색유형</option>
+                <option value="1" th:selected="${findType==1}" >제목</option>
+                <option value="2" th:selected="${findType==2}">작성자</option>
+                <option value="3" th:selected="${findType==3}">글내용</option>
+            </select>
+        </div>
+        <div class="col-4">
+            <input type="search" name="findKeyword" th:value="${findKeyword}" class="form-control"
+                   required
+                   placeholder="검색어를 입력하세요">
+        </div>
+        <div class="col-auto">
+            <button type="button" onclick="check()"
+                    class="btn btn-primary mb-3">Search</button>
+        </div>
+    </form>
+<!--   ----------------------------------- -->
+    <div class="postWrap" style="max-width:900px;margin:auto">
+        <div th:if="${findKeyword !=''}" th:inline="text">
+            검색어 : [[${findKeyword}]]
+        </div>
+        <div class="my-3">
+            총 게시글 수: <span class="text-danger" th:text="${totalCount}"></span>개</div>
+
+        <table class="table table-bordered">
+            <thead>
+            <tr class="table-dark">
+                <th>글번호</th>
+                <th>글제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${postList==null or #lists.isEmpty(postList)}">
+                <td colspan="4">데이터가 없습니다</td>
+            </tr>
+            <tr th:each="post:${postList}">
+                <td th:text="${post.id}"></td>
+                <td th:inline="text">
+                    <a th:href="@{'/posts/'+${post.id}}">[[${post.title}]]</a> &nbsp;&nbsp;&nbsp;
+                    <span th:if="${post.attach != null}"><img th:src="@{/images/attach.png}" width="16px"></span>
+                </td>
+                <td th:text="${post.name}"></td>
+                <td th:text="${#temporals.format(post.wdate,'yyyy-MM-dd')}"></td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+    <!--    페이징 관련-->
+    <nav th:if="${totalPages>=1}" aria-label="Page Navigation">
+        <ul class="pagination justify-content-center my-4">
+            <!--            이전 페이지-->
+            <li class="page-item" th:if="${pageDTO.prev}">
+                <a class="page-link" th:href="@{${pageDTO.makePageUrl('posts',startPage-1)}}">Prev</a>
+            </li>
+            <!--            페이지번호-->
+            <li class="page-item" th:each="p:${#numbers.sequence(startPage, endPage)}">
+                <a class="page-link"
+                   th:classappend="${p==page}? 'active'"
+                   th:href="@{${pageDTO.makePageUrl('posts',p)}}" th:text="${p}">1</a>
+
+                <!-- /posts?page=2&size=5&findType=1&findKeyword=Hi   =>   @{/posts(page=${p})}
+                    th:href="@{/posts(page=${p}, size=${size}, findType=${findType}, findKeyword=${findKeyword})}"
+                   -->
+            </li>
+            <!--            다음 페이지-->
+            <li class="page-item" th:if="${pageDTO.next}">
+                <a class="page-link" th:href="@{${pageDTO.makePageUrl('posts',endPage+1)}}">Next</a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        const check=()=>{
+            if(findFrm.findType.value=='0'){
+                alert('검색 유형을 선택하세요');
+                findFrm.findType.focus();
+                return;
+            }
+            if(!findFrm.findKeyword.value.trim()){
+                alert('검색어를 입력하세요');
+                findFrm.findKeyword.focus();
+                return;
+            }
+            findFrm.submit()
+        }
+    </script>
+</div>
+</body>
+</html>

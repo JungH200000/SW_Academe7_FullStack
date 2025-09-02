@@ -30,19 +30,38 @@ public class PageDTO {
         //JS : totalPages = Math.ceil(totalCount/size)
         //Java: totalPages = (totalCount-1)/size +1
         //Java  totalPages = Math.ceil((double)totalCount/size)
-        //totalCount        totalPages
-        //1 ~ 5             :   1
+        //totalCount   size     totalPages
+        //1 ~ 5         5       1
         // 6~ 10                2
         //11 ~15                3
         totalPages=(totalCount==0)? 1: (totalCount-1)/size +1;
         offset = (page-1) *size;
-        //page          offset
-        // 1            0
-        //2             5
-        //3             10
+        //page   size       offset
+        // 1      5         0
+        //2                 5
+        //3                 10
         if(page <1)  page=1;
         if(page>totalPages) page=totalPages;
         if(findKeyword==null) findKeyword="";
 
+        //page      startPage   pagingBlock      endPage
+        // 1~5      1                  5         5
+        // 6~10     6                            10
+        // 11~15    11                           15
+        startPage = ((page-1)/pagingBlock)*pagingBlock+1;
+        //react or js : startPage = Math.floor((page-1)/pagingBlock)*pagingBlock+1;
+        endPage = Math.min(totalPages,startPage + (pagingBlock-1));
+        prev = startPage>1;
+        next = endPage < totalPages;
+    }
+
+//    페이지 관련 url을 만들어주는 메서드
+    public String makePageUrl(String path, int pageNo){
+        String str="/"+path+"?page="+pageNo;
+                str+="&size="+size;
+                str+="&findType="+findType;
+                str+="&findKeyword="+findKeyword;
+        System.out.println(str);
+        return str;
     }
 }

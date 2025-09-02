@@ -15,17 +15,35 @@
         date_format(wdate,'%Y-%m-%d') wdate
         from posts order by id desc
     </select>
+<!--    검색에 사용할 where절 sql조각-->
+    <sql id="whereClause">
+        <where>
+            <if test="findKeyword !=null and findKeyword !=''">
+                <if test="findType==1">
+                    title like concat('%',#{findKeyword},'%')
+                </if>
+                <if test="findType==2">
+                    name like concat('%',#{findKeyword},'%')
+                </if>
+                <if test="findType==3">
+                    content like concat('%',#{findKeyword},'%')
+                </if>
+            </if>
+        </where>
+    </sql>
 
 <!--    총 게시글 수 또는 검색한 게시글 수 가져오기-->
     <select id="getTotalCount" resultType="_int"
-            parameterType="com.my.spring_mybatis.post.domain.PageDTO">
+            parameterType="PageDTO">
         select count(id) from posts
+        <include refid="whereClause"/>
     </select>
-<!-- 게시글 목록 또는 검색한 게시글 목록 가져오기-->
-    <select id="listPostPaging" parameterType="com.my.spring_mybatis.post.domain.PageDTO">
+<!-- 게시글 목록 또는 검색한 게시글 목록 가져오기 WGHO 순서-->
+    <select id="listPostPaging" parameterType="PageDTO">
         select id,name,title,content,attach,
         date_format(wdate,'%Y-%m-%d') wdate
         from posts
+        <include refid="whereClause"/>
         order by id desc
         limit #{size} offset  #{offset}
     </select>
