@@ -1,0 +1,29 @@
+@charset "utf-8";
+   .custom-navbar {
+     background-color: #013220;
+     padding: 15px 30px;
+   }
+   .custom-navbar ul {
+     list-style: none;
+     display: flex;
+     gap: 25px;
+   }
+   .custom-navbar li{
+        padding: 4px;
+   }
+   .custom-navbar li a {
+     color: #f1f1f1;
+     font-weight: 600;
+     text-decoration: none;
+   }
+   .custom-navbar li a:hover {
+     color: #00c853;
+     border-bottom: 2px solid #00c853;
+   }
+   .custom-navbar li.active{
+     background-color: #00c853;
+     color: #fff;
+     font-weight:700;
+     border-radius: 5px;
+     padding: 4px 10px;
+   }

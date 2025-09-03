@@ -2,7 +2,7 @@ server:
   port: 7777
 spring:
   application:
-    name: spring-mybatis
+    name: spring-jpa
   #db mysql
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -13,14 +13,17 @@ spring:
     multipart:
       max-file-size: 100MB # 파일 업로드 최대 용량 설정
       max-request-size: 1000MB # 요청 보낼때 파일 업로드 총 용량
-# mybatis mapper
-mybatis:
-  mapper-locations: classpath:mapper/**/*.xml
-  config-location: classpath:config/mybatis-config.xml
-#logging
-logging:
-  level:
-    root: info
-    com.my.spring_mybatis: debug
+  jpa:
+    hibernate:
+      ddl-auto: create # 개발 중에는 update, 배포 운영시에는 none으로 권장
+      show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+  logging:
+    level:
+      org.hibernate.SQL: debug
+      org.hibernate.type: trace
 file:
   upload_dir: D:/devSource/Spring/uploads #upload dir

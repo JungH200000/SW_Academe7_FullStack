@@ -9,10 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @Slf4j
@@ -64,4 +61,13 @@ public class LoginController {
         session.invalidate();
         return "redirect:/";//홈으로 이동
     }
+     //예외 처리 방법
+    //[1] @ExceptionHandler 어노테이션 이용한 메서드를 작성 방법
+    //[2] @ControllerAdvice 클래스를 작성하는 방법 [권장] ==> 예외 처리 관련 메서드를 모을 수 있다
+//    @ExceptionHandler(IllegalArgumentException.class)
+//    public String exceptionHandler(Exception ex, Model model){
+//        model.addAttribute("msg", ex.getMessage());
+//        model.addAttribute("loc","/login");
+//        return "error";
+//    }
 }
