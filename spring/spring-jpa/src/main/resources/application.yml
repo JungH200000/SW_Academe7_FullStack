@@ -15,15 +15,15 @@ spring:
       max-request-size: 1000MB # 요청 보낼때 파일 업로드 총 용량
   jpa:
     hibernate:
-      ddl-auto: create # 개발 중에는 update, 배포 운영시에는 none으로 권장
-      show-sql: true
+      ddl-auto: update # 개발 중에는 update, 배포 운영시에는 none으로 권장
+      show-sql: false
     properties:
       hibernate:
-        format_sql: true
+        format_sql: false
         dialect: org.hibernate.dialect.MySQLDialect
   logging:
     level:
-      org.hibernate.SQL: debug
+      org.hibernate.SQL: false
       org.hibernate.type: trace
 file:
   upload_dir: D:/devSource/Spring/uploads #upload dir

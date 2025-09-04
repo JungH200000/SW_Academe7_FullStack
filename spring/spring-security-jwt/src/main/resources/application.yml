@@ -1,0 +1,10 @@
+server:
+  port: 5555
+  devtools:
+    livereload:
+      enabled: true
+spring:
+  profiles:
+#    active: prod #운영 모드 일때 application-prod.yml 을 적용
+    active: dev  # 개발 모드일 때  application-dev.yml을 적용
+  
