@@ -24,7 +24,18 @@ export const refreshAccessToken = async () => {
     }
     //리프레시 토큰을 보내 서버에서 검증받은 후 새 억세스토큰을 받자
     try {
-        const response = await axios.post(`http://localhost:7777/api/auth/refresh`, { refreshToken });
+        //const response = await axios.post(`http://localhost:7777/api/auth/refresh`, { refreshToken }); //Node.js연동
+
+        const response = await axios.post(
+            `http://localhost:7777/api/auth/refresh`, //spring security jwt연동시
+            { refreshToken }, // body
+            {
+                headers: {
+                    Authorization: `Bearer ${refreshToken}`,
+                },
+            }
+        );
+
         const newAccessToken = await response.data?.accessToken;
         return newAccessToken;
     } catch (error) {

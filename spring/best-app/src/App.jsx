@@ -34,6 +34,7 @@ function App() {
                     },
                 });
                 const authUser = await response.data;
+                alert(JSON.stringify(authUser));
                 loginAuthUser(authUser); //인증사용자 정보 전역 state에 설정 후 로딩상태 false
             }
         } catch (error) {
@@ -62,7 +63,7 @@ function App() {
                             <LoginModal show={showLogin} setShowLogin={setShowLogin} />
                             {/* 라우트 */}
                             <Routes>
-                                <Route path="/" element={<Home />} />
+                                <Route path="/" element={<PostApp />} />
                                 <Route path="/posts" element={<PostApp />} />
                                 <Route path="/posts/:id" element={<PostView />} />
                                 <Route path="/postEdit/:id" element={<PostEdit />} />

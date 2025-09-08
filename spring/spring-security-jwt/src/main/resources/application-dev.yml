@@ -29,3 +29,9 @@ spring:
       enabled: true
       max-file-size: 100MB
       max-request-size: 1000MB
+file:
+  upload_dir: D:/devSource/Spring/uploads #upload dir
+jwt:
+  secret: "mytop_secret_key_123456_abcdefghijk" # 32바이트 이상이어야 함. 짧으면 에러남. jwt서명에 사용 시크릿 키
+  access-token-expiration: 900000 # 15분 = 60*15*1000
+  refresh-token-expiration: 3600000 # 1시간 (밀리초) = 60*60*1000

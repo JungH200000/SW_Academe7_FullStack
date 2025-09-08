@@ -25,3 +25,5 @@ spring:
       enabled: true
       max-file-size: 100MB
       max-request-size: 1000MB
+file:
+  upload_dir: D:/devSource/Spring/uploads

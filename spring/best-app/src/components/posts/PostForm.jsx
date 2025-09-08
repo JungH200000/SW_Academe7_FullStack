@@ -30,10 +30,10 @@ export default function PostForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            // if (!authUser || !formData.name) {
-            //     alert('로그인해야 이용 가능합니다');
-            //     return;
-            // }
+            if (!authUser || !formData.name) {
+                alert('로그인해야 이용 가능합니다');
+                return;
+            }
 
             // const result = await apiCreatePost(formData); //파일업로드 하지 않는 경우
             //---------------------
@@ -66,19 +66,12 @@ export default function PostForm() {
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="name">
                     <Form.Label>Name</Form.Label>
-                    {/* <Form.Control
+                    <Form.Control
                         type="text"
                         name="name"
                         onChange={handleChange}
                         value={authUser?.email ?? ''}
                         placeholder={authUser?.email ?? '로그인해야 이용 가능해요'}
-                    /> */}
-                    <Form.Control
-                        type="text"
-                        name="name"
-                        onChange={handleChange}
-                        value={formData.name}
-                        placeholder={'Name(email)'}
                     />
                 </Form.Group>
                 <Form.Group controlId="title">
