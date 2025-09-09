@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyWidget</string>
+    <string name="btn_label">Click Me</string>
+</resources>
