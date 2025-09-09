@@ -32,7 +32,8 @@ public class WebSecurityAndJwtConfig {
     private MemberRepository memberRepository;
 
     private static final String[] WHITE_LIST={"/",
-            "/api/posts","/api/users",
+            "/index.html","/assets/**",
+            "/api/posts/**","/api/users/**",
             "/api/auth/login","/api/auth/logout",
             "/api/auth/refresh","/api/auth/user",
             "public/**","/uploads/**"};
@@ -47,13 +48,16 @@ public class WebSecurityAndJwtConfig {
         return(web-> web.ignoring().requestMatchers("/static/**"));
     }
 
+
     @Bean
     public WebMvcConfigurer corsConfigurer(){
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry){
-                registry.addMapping("/api/**")
-                        .allowedOrigins("http://localhost:5173")
+//                registry.addMapping("/api/**")
+                        //.allowedOrigins("http://localhost:5173") //모바일 웹뷰에서 접근 허용 하려면 모든* 것 허용하도록 수정하자
+                registry.addMapping("/**")   // 모든 경로 허용
+                        .allowedOrigins("http://localhost:7777","http://192.168.0.118:7777") // 모든 origin 허용 (또는 안드로이드 기기 IP)
                         .allowedMethods("GET","POST","DELETE","PUT","OPTIONS") //허용할 HTTP 메서드
                         .allowCredentials(true);
             }

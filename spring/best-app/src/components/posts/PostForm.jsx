@@ -26,10 +26,16 @@ export default function PostForm() {
             setFormData({ file: e.target.files[0] }); //File객체로 할당
         }
     };
+    useEffect(() => {
+        if (authUser) {
+            setFormData({ name: authUser.email });
+        }
+    }, [authUser, setFormData]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            alert(authUser);
             if (!authUser || !formData.name) {
                 alert('로그인해야 이용 가능합니다');
                 return;

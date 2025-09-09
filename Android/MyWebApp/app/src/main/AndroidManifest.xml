@@ -2,7 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+<!--    인터넷 사용 권한 설정 : 앱에서 인터넷을 사용하도록 허용-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -12,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyWebApp">
         <activity
-            android:name=".MainActivity"
+            android:name=".IntroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".LoginActivity"/>
     </application>
 
 </manifest>

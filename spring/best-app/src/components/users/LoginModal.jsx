@@ -3,6 +3,7 @@ import { Modal, Button, Row, Col, Form } from 'react-bootstrap';
 import { useState, useRef, useEffect } from 'react';
 import { apiSignIn } from '../../api/userApi';
 import { useAuthStore } from '../../stores/authStore';
+import './LoginModal.css';
 export default function LoginModal({ show, setShowLogin }) {
     const [loginUser, setLoginUser] = useState({ email: '', passwd: '' });
     const loginAuthUser = useAuthStore((s) => s.loginAuthUser);
@@ -63,7 +64,7 @@ export default function LoginModal({ show, setShowLogin }) {
 
     return (
         <>
-            <Modal show={show} onHide={() => setShowLogin(false)}>
+            <Modal show={show} onHide={() => setShowLogin(false)} keyboard={false} backdrop="static" centered>
                 <Modal.Header closeButton>
                     <Modal.Title>Login</Modal.Title>
                 </Modal.Header>

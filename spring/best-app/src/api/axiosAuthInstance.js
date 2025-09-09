@@ -4,7 +4,8 @@ import axios from 'axios';
 import { checkTokenExpiration, refreshAccessToken } from '../utils/authUtils';
 
 const axiosAuthInstance = axios.create({
-    baseURL: `http://localhost:7777/api`,
+    // baseURL: `http://localhost:7777/api`,
+    baseURL: `/api`,
     headers: {
         'Content-Type': 'application/json',
     },

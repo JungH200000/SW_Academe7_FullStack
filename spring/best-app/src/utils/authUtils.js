@@ -27,7 +27,8 @@ export const refreshAccessToken = async () => {
         //const response = await axios.post(`http://localhost:7777/api/auth/refresh`, { refreshToken }); //Node.js연동
 
         const response = await axios.post(
-            `http://localhost:7777/api/auth/refresh`, //spring security jwt연동시
+            // `http://localhost:7777/api/auth/refresh`, //spring security jwt연동시
+            `/api/auth/refresh`,
             { refreshToken }, // body
             {
                 headers: {

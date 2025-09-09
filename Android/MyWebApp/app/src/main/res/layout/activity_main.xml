@@ -1,19 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:paddingTop="26dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    android:orientation="vertical"
+    android:background="@drawable/bg4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="A님 로그인 중..."
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:textColor="@color/white"
+        android:gravity="center"
+         />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/btnNaver"
+            android:text="Naver"
+            android:background="@drawable/square_button"
+            android:textSize="11sp"
+            android:layout_marginRight="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/btnPost"
+            android:text="Post"
+            android:layout_marginRight="1dp"
+            android:textSize="11sp"
+            android:background="@drawable/square_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btnHtml"
+            android:layout_weight="1"
+            android:text="Html"
+            android:layout_marginRight="1dp"
+            android:background="@drawable/square_button"
+            android:textSize="11sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btnFile"
+            android:textSize="11sp"
+            android:layout_weight="1"
+            android:background="@drawable/square_button"
+            android:text="File"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <WebView
+        android:layout_weight="1"
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:text="Logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

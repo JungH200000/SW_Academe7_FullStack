@@ -48,14 +48,14 @@ export default function PostList() {
                         <div style={{ width: '30%' }} className="text-center">
                             {post.attach ? (
                                 <img
-                                    src={`http://localhost:7777/uploads/${post.attach}`}
+                                    src={`/uploads/${post.attach}`}
                                     alt={post.attach}
                                     style={{ width: '90%' }}
                                     className="img-thumbnail"
                                 />
                             ) : (
                                 <img
-                                    src={`http://localhost:7777/uploads/noimage.png`}
+                                    src={`/uploads/noimage.png`}
                                     alt={post.attach ?? 'noimage'}
                                     style={{ width: '90%' }}
                                     className="img-thumbnail"

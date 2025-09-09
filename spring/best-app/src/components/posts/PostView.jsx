@@ -94,7 +94,7 @@ export default function PostView() {
                             <hr />
                             <div style={{ marginBottom: '1rem' }} className="text-center">
                                 <img
-                                    src={`http://localhost:7777/uploads/${post.attach ?? 'noimage.png'}`}
+                                    src={`/uploads/${post.attach ?? 'noimage.png'}`}
                                     alt={`${post.attach ?? 'noimage'}`}
                                     style={{ maxWidth: '100%', borderRadius: '0.5rem' }}
                                 />

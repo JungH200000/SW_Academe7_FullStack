@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg1">
+
+    <ImageButton
+        android:id="@+id/introIcon"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="fitCenter"
+        android:background="#ffffff00"
+        android:src="@drawable/img4"
+        android:layout_centerInParent="true"
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="달밤의 댕댕이"
+        android:shadowColor="#ff0000"
+        android:shadowRadius="7"
+        android:textStyle="bold"
+        android:layout_above="@id/introIcon"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:text="Abc co ltd\nhttp://www.abc.co.kr\n02-1111-1234"
+        android:textColor="#ffff00"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/introIcon"
+        android:layout_marginTop="10dp"
+        android:autoLink="all"
+        android:typeface="serif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>
